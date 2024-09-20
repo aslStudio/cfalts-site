@@ -1,4 +1,3 @@
-import { videos } from '@/shared/assets/videos';
 import { images } from '@/shared/assets/images';
 
 import styles from './Info.module.scss'
@@ -27,9 +26,9 @@ const PromoCard = () => (
 			autoPlay={true}
 			loop={true}
 			muted={true}
-			poster={images.Main.Info.Preview}
+			poster={'/images/preview.png'}
 		>
-			<source data-src={videos.Promo} type={'video/mp4'} />
+			<source data-src={'/videos/promo.mp4'} type={'video/mp4'} />
 		</video>
 		<div className={styles['card-container']}>
 			<p className={styles.title}>CFLATS GAME </p>
