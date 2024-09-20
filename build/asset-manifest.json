@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.21a39501.css",
-    "main.js": "/static/js/main.873163b3.js",
+    "main.css": "/static/css/main.bce8eb1c.css",
+    "main.js": "/static/js/main.be940af7.js",
     "static/js/453.1eae8d15.chunk.js": "/static/js/453.1eae8d15.chunk.js",
-    "static/media/promo.mp4": "/static/media/promo.56c37b5f07ffb4d957b0.mp4",
     "static/media/desktop.png": "/static/media/desktop.74a6a26cdee941f062f9.png",
     "static/media/default.png": "/static/media/default.097b73933db5dea90154.png",
     "static/media/mobile.png": "/static/media/mobile.c184243e48ba093413a1.png",
@@ -11,7 +10,6 @@
     "static/media/gold-min.png": "/static/media/gold-min.952073557658fb6bc2d0.png",
     "static/media/shape-min.png": "/static/media/shape-min.81c8491c5dde6cf2f671.png",
     "static/media/silver-min.png": "/static/media/silver-min.7d3ed4c3f0ef18b31f06.png",
-    "static/media/preview.png": "/static/media/preview.13d37b2954243ad05350.png",
     "static/media/picGame-min.png": "/static/media/picGame-min.a8c4c1b45a90ff4169f1.png",
     "static/media/background.png": "/static/media/background.6fae02ca5e42e27acb22.png",
     "static/media/Nunito-ExtraBold.ttf": "/static/media/Nunito-ExtraBold.42043534d98f10220d0a.ttf",
@@ -78,12 +76,12 @@
     "static/media/30-min.jpg": "/static/media/30-min.d7e0eaff78163b2e4ab6.jpg",
     "static/media/icon-coinbasesvg.svg": "/static/media/icon-coinbasesvg.5f846768967fc1640020af9e625e84f1.svg",
     "index.html": "/index.html",
-    "main.21a39501.css.map": "/static/css/main.21a39501.css.map",
-    "main.873163b3.js.map": "/static/js/main.873163b3.js.map",
+    "main.bce8eb1c.css.map": "/static/css/main.bce8eb1c.css.map",
+    "main.be940af7.js.map": "/static/js/main.be940af7.js.map",
     "453.1eae8d15.chunk.js.map": "/static/js/453.1eae8d15.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.21a39501.css",
-    "static/js/main.873163b3.js"
+    "static/css/main.bce8eb1c.css",
+    "static/js/main.be940af7.js"
   ]
 }
