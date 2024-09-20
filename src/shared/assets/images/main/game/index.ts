@@ -1,4 +1,4 @@
 export const Game = {
-	left: require('./phone-left.png'),
-	right: require('./phone-right.png'),
+	left: require('./phone-left-min.png'),
+	right: require('./phone-right-min.png'),
 }

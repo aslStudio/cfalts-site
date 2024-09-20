@@ -1,9 +1,9 @@
-import Gen1 from './gen1.png'
-import Gen2 from './gen2.png'
-import Gen3 from './gen3.png'
-import Gen4 from './gen4.png'
-import Gen5 from './gen5.png'
-import RoomImage from './picGame.png'
+import Gen1 from './gen1-min.png'
+import Gen2 from './gen2-min.png'
+import Gen3 from './gen3-min.png'
+import Gen4 from './gen4-min.png'
+import Gen5 from './gen5-min.png'
+import RoomImage from './picGame-min.png'
 
 export const Room = {
 	Gen1,

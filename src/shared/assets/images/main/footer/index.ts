@@ -1,4 +1,4 @@
-import Shape from './shape.png'
+import Shape from './shape-min.png'
 
 export const Footer = {
 	Shape,

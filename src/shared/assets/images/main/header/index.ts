@@ -1,8 +1,8 @@
-import Logo from './logo.png'
-import Discord from './discord.png'
-import Telegram from './telegram.png'
-import X from './x.png'
-import Wallet from './wallet.png'
+import Logo from './logo-min.png'
+import Discord from './discord-min.png'
+import Telegram from './telegram-min.png'
+import X from './x-min.png'
+import Wallet from './wallet-min.png'
 
 export const Header = {
 	Logo,

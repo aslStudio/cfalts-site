@@ -1,7 +1,7 @@
-import First from './1.png'
-import Second from './2.png'
-import Third from './3.png'
-import Fours from './4.png'
+import First from './1-min.png'
+import Second from './2-min.png'
+import Third from './3-min.png'
+import Fours from './4-min.png'
 
 export const Team = {
 	'1': First,
