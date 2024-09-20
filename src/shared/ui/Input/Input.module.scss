@@ -1,0 +1,26 @@
+@import "src/app/styles/index.scss";
+
+.root {
+    height: 60px;
+    padding: 19px 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: rgba(33, 45, 62, 0.75);
+    opacity: 0.5;
+    font-family: $mainFontFamily;
+
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 800;
+    color: #76869A;
+
+    @include media-tablet() {
+        font-size: 18px;
+        line-height: 25px;
+        padding: 18px 20px;
+        font-weight: 400;
+    }
+}

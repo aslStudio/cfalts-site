@@ -1,0 +1,60 @@
+@import "src/app/styles/index.scss";
+
+.view {
+    &-blue {
+        color: #40FFF4;
+    }
+
+    &-yellow {
+        color: #FFC940;
+    }
+
+    &-lightBlue {
+        color: #8CCFFF;
+    }
+
+    &-purple {
+        color: #CA47D6;
+    }
+
+    &-red {
+        color: #CB0000;
+    }
+
+    &-dardBlue {
+        color: #0085FF;
+    }
+
+    &-surface {
+        color: #FFFFFF;
+    }
+}
+
+.title {
+    color: inherit;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 800;
+
+    @include media-tablet() {
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
+
+.description {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+
+    margin-top: 40px;
+
+    @include media-tablet() {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 400;
+
+        margin-top: 50px;
+    }
+}

@@ -1,0 +1,28 @@
+@import "src/app/styles/mixins.scss";
+
+.row {
+    height: 110px;
+    overflow-y: hidden;
+
+    & + & {
+        margin-top: -1px;
+    }
+
+    @include media-tablet() {
+        height: 200px;
+
+        & + & {
+            margin-top: -2px;
+        }
+    }
+}
+
+.image {
+    width: 110px;
+    height: 110px;
+
+    @include media-tablet() {
+        width: 200px;
+        height: 200px;
+    }
+}

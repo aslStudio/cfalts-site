@@ -1,0 +1,214 @@
+@import "src/app/styles/index.scss";
+
+@function toPercentWidth($size) {
+    @return $size / 9.8 * 1%
+}
+
+@function toPercentHeight($size) {
+    @return $size / 6.312 * 1%
+}
+
+@keyframes gen-1-animation {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes gen-2-animation {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+}
+
+@keyframes gen-3-animation {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+}
+
+@keyframes gen-4-animation {
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+}
+
+@keyframes gen-5-animation {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.root {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+
+    @include media-tablet() {
+        margin-top: 120px;
+    }
+}
+
+.room {
+    width: 100%;
+}
+
+.gen {
+    position: absolute;
+
+    opacity: 0;
+
+    @include media-max-desktop() {
+        animation-fill-mode: forwards;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @include media-desktop() {
+        transition: 0.3s ease;
+        transition-property: opacity;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    & img {
+        width: 100%;
+    }
+
+    & .content {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    & .title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 14px;
+
+        @include media-tablet() {
+            font-size: 22px;
+        }
+
+        @include media-desktop() {
+            font-size: 32px;
+        }
+    }
+
+    & .description {
+        text-align: center;
+        font-weight: 500;
+        font-size: 12px;
+
+        @include media-tablet() {
+            font-size: 18px;
+        }
+
+        @include media-desktop() {
+            font-size: 24px;
+        }
+    }
+}
+
+.gen1 {
+    position: absolute;
+    width: toPercentWidth(399);
+    top: 0;
+    left: toPercentWidth(364);
+
+    @include media-max-desktop() {
+        animation-name: gen-1-animation;
+    }
+}
+
+.gen2 {
+    position: absolute;
+    width: toPercentWidth(403);
+    top: toPercentHeight(109);
+    left: toPercentWidth(579);
+
+    @include media-max-desktop() {
+        animation-name: gen-2-animation;
+    }
+}
+
+.gen3 {
+    position: absolute;
+    width: toPercentWidth(582);
+    top: toPercentHeight(94);
+    left: toPercentWidth(0);
+
+    @include media-max-desktop() {
+        animation-name: gen-3-animation;
+    }
+}
+
+.gen4 {
+    position: absolute;
+    width: toPercentWidth(404);
+    top: toPercentHeight(202);
+    left: toPercentWidth(398);
+
+    @include media-max-desktop() {
+        animation-name: gen-4-animation;
+    }
+}
+
+.gen5 {
+    position: absolute;
+    width: toPercentWidth(407);
+    top: toPercentHeight(292);
+    left: toPercentWidth(217);
+
+    @include media-max-desktop() {
+        animation-name: gen-5-animation;
+    }
+}

@@ -1,0 +1,312 @@
+@import "src/app/styles/mixins.scss";
+
+@function getPercentSize($size) {
+    @return $size / 5.8 * 1%
+}
+
+@function getMobilePercentSize($size) {
+    @return $size / 3.9 * 1%
+}
+
+@keyframes mint-animation-1 {
+    0% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes mint-animation-2 {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes mint-animation-3 {
+    0% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+.root {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    @include media-desktop() {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.promo-card,
+.mint-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    aspect-ratio: 1;
+
+    @include media-tablet() {
+        width: 100%;
+        border-radius: 32px;
+    }
+
+    @include media-desktop() {
+        width: calc(50% - 20px);
+    }
+}
+
+.promo-card {
+    & .title {
+        text-align: center;
+        font-size: 28px;
+        line-height: 38px;
+        font-weight: 800;
+    }
+
+    & .description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 21px;
+        line-height: 29px;
+        font-weight: 700;
+        margin-top: 10px;
+
+        & img {
+            width: 25px;
+            margin-left: 10px;
+        }
+    }
+
+    & .button {
+        width: 320px;
+        margin-top: 50px;
+    }
+
+    @include media-tablet() {
+        & .title {
+            font-size: 42px;
+            line-height: 57px;
+        }
+
+        & .description {
+            font-size: 32px;
+            line-height: 43px;
+
+            & img {
+                width: 44px;
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.mint-card {
+    background: linear-gradient(180deg, #f4e9e9 0%, #ddc9c9 100%);
+
+    @include media-tablet() {
+        margin-top: 34px;
+    }
+
+    @include media-desktop() {
+        margin-top: 0;
+    }
+
+    & img {
+        width: 100%;
+
+        animation-duration: 8s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+
+    & .image-1 {
+        position: absolute;
+        top: getMobilePercentSize(-20);
+        left: getMobilePercentSize(-100);
+        width: getMobilePercentSize(270);
+        height: getMobilePercentSize(211);
+        transform: rotate(-5.26deg);
+
+        & img {
+            animation-name: mint-animation-1;
+        }
+
+        @include media-tablet() {
+            top: getPercentSize(-40);
+            left: getPercentSize(-168);
+            width: getPercentSize(401);
+            height: getPercentSize(315);
+        }
+    }
+
+    & .image-2 {
+        position: absolute;
+        top: getMobilePercentSize(200);
+        left: getMobilePercentSize(-80);
+        width: getMobilePercentSize(251);
+
+        & img {
+            animation-name: mint-animation-2;
+        }
+
+        @include media-tablet() {
+            top: getPercentSize(310);
+            left: getPercentSize(-120);
+            width: getPercentSize(329);
+        }
+    }
+
+    & .image-3 {
+        position: absolute;
+        top: getMobilePercentSize(196);
+        right: getMobilePercentSize(-63);
+        width: getMobilePercentSize(151);
+        transform: rotate(43deg);
+
+        & img {
+            animation-name: mint-animation-3;
+        }
+
+        @include media-tablet() {
+            top: getPercentSize(297);
+            right: getPercentSize(-95);
+            width: getPercentSize(226);
+        }
+    }
+
+    & .image-4 {
+        position: absolute;
+        top: 0;
+        right: getMobilePercentSize(70);
+        width: getMobilePercentSize(130);
+        transform: rotate(-44deg);
+
+        & img {
+            animation-name: mint-animation-1;
+        }
+
+        @include media-tablet() {
+            top: getPercentSize(-3);
+            right: getPercentSize(103);
+            width: getPercentSize(194);
+        }
+    }
+
+    & .image-5 {
+        position: absolute;
+        top: getMobilePercentSize(268);
+        right: getMobilePercentSize(154);
+        width: getMobilePercentSize(64);
+        transform: rotate(-32.94deg);
+
+        & img {
+            animation-name: mint-animation-2;
+        }
+
+        @include media-tablet() {
+            top: getPercentSize(398);
+            right: getPercentSize(230);
+            width: getPercentSize(96);
+        }
+    }
+
+    & .image-6 {
+        position: absolute;
+        top: getMobilePercentSize(104);
+        right: getMobilePercentSize(4);
+        width: getMobilePercentSize(96);
+        transform: rotate(-32.94deg);
+
+        & img {
+            animation-name: mint-animation-3;
+        }
+
+        @include media-tablet() {
+            top: getPercentSize(155);
+            right: getPercentSize(6);
+            width: getPercentSize(144);
+        }
+    }
+
+    & .title {
+        font-size: 42px;
+        line-height: 57px;
+        font-weight: 800;
+        text-align: center;
+
+        background: linear-gradient(296.16deg, #7529BB 16.33%, #00B3FF 47.17%, #E256B7 83.39%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    & .button {
+        width: 215px;
+        margin-top: 33px;
+
+        @include media-tablet() {
+            width: 320px;
+            margin-top: 52px;
+        }
+    }
+}
+
+.card-container {
+    position: relative;
+    z-index: 2;
+}
+
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}

@@ -1,0 +1,1 @@
+export { RarityProperties } from './RarityProperties'

@@ -1,0 +1,1 @@
+export { ThirdGradientBackground } from './ThirdGradientBackground'

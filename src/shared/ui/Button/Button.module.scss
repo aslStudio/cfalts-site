@@ -1,0 +1,70 @@
+@import "src/app/styles/index.scss";
+
+.root {
+    border: none;
+    outline: none;
+    font-family: $mainFontFamily;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.size {
+    &-m {
+        padding: 7px 20px;
+        border-radius: 22px;
+
+        font-size: 21px;
+        line-height: 30px;
+        font-weight: 700;
+
+        @include media-tablet() {
+            padding: 10px 30px;
+            border-radius: 66px;
+            font-size: 32px;
+            line-height: 43px;
+        }
+    }
+
+    &-s {
+        padding: 15px;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        border-radius: 50px;
+
+        @include media-tablet() {
+            font-size: 24px;
+            line-height: 33px;
+        }
+    }
+}
+
+.view {
+    &-brand {
+        color: #fff;
+
+        background-color: #0F6EB2;
+        box-shadow: 4px 8px 8px 0 rgba(0, 0, 0, 0.15);
+
+        transition: 0.3s ease;
+        transition-property: background-color;
+
+        &:hover {
+            background-color: #0A4C7B;
+        }
+    }
+
+    &-purple {
+        background: url("../../assets/images/common/button-bg.png");
+        color: #fff;
+
+        opacity: 1;
+
+        transition: 0.3s ease;
+        transition-property: opacity;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.fade-in {
+    animation: 0.5s fade-in forwards;
+}
+
+.fade-out {
+    animation: 0.5s fade-out forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes infinity-scroll {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-200%);
+    }
+}
+
+.is-section-not-animated {
+    transform: translateY(50px);
+    opacity: 0;
+
+    transition: 0.3s ease;
+    transition-property: transform, opacity;
+    transition-delay: 0.3s;
+}
+
+.is-section-animated {
+    transform: translateY(0);
+    opacity: 1;
+}

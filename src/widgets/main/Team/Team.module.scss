@@ -1,0 +1,248 @@
+@import "src/app/styles/index.scss";
+
+@keyframes cell-1-animation {
+    0% {
+        border-color: #FF0000;
+    }
+    25% {
+        border-color: #00FFF0;
+    }
+    50% {
+        border-color: #BD00FF;
+    }
+    75% {
+        border-color: #BDFF00;
+    }
+    100% {
+        border-color: #FF0000;
+    }
+}
+
+@keyframes cell-2-animation {
+    0% {
+        border-color: #00FFF0;
+    }
+    25% {
+        border-color: #BD00FF;
+    }
+    50% {
+        border-color: #BDFF00;
+    }
+    75% {
+        border-color: #FF0000;
+    }
+    100% {
+        border-color: #00FFF0;
+    }
+}
+
+@keyframes cell-3-animation {
+    0% {
+        border-color: #BD00FF;
+    }
+    25% {
+        border-color: #BDFF00;
+    }
+    50% {
+        border-color: #FF0000;
+    }
+    75% {
+        border-color: #FF0000;
+    }
+    100% {
+        border-color: #BD00FF;
+    }
+}
+
+@keyframes cell-4-animation {
+    0% {
+        border-color: #BDFF00;
+    }
+    25% {
+        border-color: #FF0000;
+    }
+    50% {
+        border-color: #FF0000;
+    }
+    75% {
+        border-color: #00FFF0;
+    }
+    100% {
+        border-color: #BDFF00;
+    }
+}
+
+.root {
+    margin-top: 32px;
+
+    @include media-tablet() {
+        margin-top: 75px;
+    }
+
+    @include media-desktop() {
+        margin-top: 180px;
+    }
+}
+
+.title {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 800;
+    color: #CB0000;
+
+    @include media-tablet() {
+        font-size: 32px;
+        line-height: 44px;
+    }
+}
+
+.description {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+
+    margin-top: 40px;
+
+    @include media-tablet() {
+        font-size: 24px;
+        line-height: 33px;
+        font-weight: 700;
+        margin-top: 50px;
+    }
+}
+
+.slider {
+    margin-top: 60px;
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    @include media-tablet() {
+        width: 243px;
+
+        & + & {
+            margin-left: 50px;
+        }
+    }
+
+    & img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 3px solid;
+        margin-bottom: 50px;
+    }
+
+    & .title {
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+
+        @include media-tablet() {
+            font-size: 24px;
+            line-height: 33px;
+        }
+    }
+
+    & .description {
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+        margin-top: 0;
+
+        @include media-tablet() {
+            font-size: 24px;
+            line-height: 33px;
+            font-weight: 400;
+        }
+    }
+}
+
+.avatar-1 {
+    animation-name: cell-1-animation;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+
+.avatar-2 {
+    animation-name: cell-2-animation;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+
+.avatar-3 {
+    animation-name: cell-3-animation;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+
+.avatar-4 {
+    animation-name: cell-4-animation;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+}
+
+.main-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 80px;
+
+    @include media-max-desktop() {
+        & + & {
+            margin-top: 80px;
+        }
+    }
+
+    @include media-desktop() {
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 120px;
+
+        & + & {
+            margin-top: 0;
+            margin-left: 50px;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    align-items: center;
+
+    @include media-max-desktop() {
+        & + & {
+            margin-top: 80px;
+        }
+    }
+
+    @include media-desktop() {
+        flex-direction: row;
+        justify-content: center;
+
+        & + & {
+            margin-top: 0;
+            margin-left: 50px;
+        }
+    }
+}
