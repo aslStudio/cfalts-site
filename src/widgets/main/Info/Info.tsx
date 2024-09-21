@@ -27,8 +27,9 @@ const PromoCard = () => (
 			loop={true}
 			muted={true}
 			poster={'/images/preview.png'}
+			preload='none'
 		>
-			<source data-src={'/videos/promo.mp4'} type={'video/mp4'} />
+			<source src={'/videos/promo.mp4'} type={'video/mp4'} />
 		</video>
 		<div className={styles['card-container']}>
 			<p className={styles.title}>CFLATS GAME </p>

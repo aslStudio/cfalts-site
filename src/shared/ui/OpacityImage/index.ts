@@ -1,0 +1,1 @@
+export { OpacityImage, type OpacityImageProps } from './OpacityImage'

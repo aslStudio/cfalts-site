@@ -25,7 +25,6 @@ export const useScrollAnimation = () => {
 	].join(' '), [isShowed])
 
 	function onScroll() {
-		console.log(ref.current)
 		if (ref.current && isAnyElementInViewport(ref.current)) {
 			setIsShowed(true)
 		}

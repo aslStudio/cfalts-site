@@ -1,5 +1,7 @@
 import React from "react";
+
 import {images} from "@/shared/assets/images";
+import { OpacityImage } from "@/shared/ui/OpacityImage";
 
 import styles from './TheGradientBackground.module.scss'
 
@@ -10,17 +12,15 @@ export const ThirdGradientBackground = React.memo<
 }) => {
     return (
         <div className={styles.root}>
-            <img
+            <OpacityImage
                 className={styles.desktop}
                 src={images.Main.Gradient3.desktop}
                 alt={'desktop-decoration'}
-			    loading="lazy"
             />
-            <img
+            <OpacityImage
                 className={styles.mobile}
                 src={images.Main.Gradient3.mobile}
                 alt={'desktop-decoration'}
-			    loading="lazy"
             />
             {children}
         </div>
