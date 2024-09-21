@@ -22,15 +22,17 @@ export const Game = () => {
 				</p>
 			</div>
 			<div className={styles.image}>
-				<WebpImage
+				<img
 					className={`${styles['image-left']} ${isShowed ? styles['is-active'] : ''}`}
-					src={images.main.game.phoneLeft}
+					src={`${images.main.game.phoneLeft}.png`}
 					alt={'phone-left'}
+					loading='lazy'
 				/>
-				<WebpImage
+				<img
 					className={`${styles['image-right']} ${isShowed ? styles['is-active'] : ''}`}
-					src={images.main.game.phoneRight}
+					src={`${images.main.game.phoneRight}.png`}
 					alt={'phone-left'}
+					loading='lazy'
 				/>
 			</div>
 		</section>
