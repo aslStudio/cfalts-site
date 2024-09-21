@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react"
 
 import styles from './OpacityImage.module.scss'
+import { WebpImage } from "../WebpImage"
 
 export type OpacityImageProps = {
     className?: string
@@ -22,7 +23,7 @@ export const OpacityImage = React.memo<OpacityImageProps>(({
     ].join(' '), [isLoaded])
 
     return (
-        <img
+        <WebpImage
             className={classes}
             src={src}
             alt={alt}

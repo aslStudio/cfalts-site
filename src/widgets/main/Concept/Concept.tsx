@@ -1,7 +1,8 @@
-import { images } from '@/shared/assets/images';
+import { useScrollAnimation } from '@/shared/lib/hooks/useScrollAnimation';
 
 import styles from './Concept.module.scss'
-import { useScrollAnimation } from '@/shared/lib/hooks/useScrollAnimation';
+import { WebpImage } from '@/shared/ui/WebpImage';
+import { images } from '@/shared/lib/images';
 
 export const Concept = () => {
 	const { ref, classes } = useScrollAnimation()
@@ -24,45 +25,37 @@ export const Concept = () => {
 
 const AnimatedRoom = () => (
 	<div className={styles.room}>
-		<img 
-			src={images.Main.Concept['1']} 
+		<WebpImage 
+			src={images.main.concept['1']} 
 			alt={'concept-1'} 
-			loading='lazy'
 		/>
-		<img 
-			src={images.Main.Concept['2']} 
+		<WebpImage
+			src={images.main.concept['2']} 
 			alt={'concept-2'} 
-			loading='lazy'
 		/>
-		<img 
-			src={images.Main.Concept['3']} 
+		<WebpImage 
+			src={images.main.concept['3']} 
 			alt={'concept-3'} 
-			loading='lazy'
 		/>
-		<img 
-			src={images.Main.Concept['4']} 
+		<WebpImage
+			src={images.main.concept['4']} 
 			alt={'concept-4'} 
-			loading='lazy'
 		/>
-		<img 
-			src={images.Main.Concept['5']} 
+		<WebpImage
+			src={images.main.concept['5']} 
 			alt={'concept-5'} 
-			loading='lazy'
 		/>
-		<img 
-			src={images.Main.Concept['6']} 
+		<WebpImage
+			src={images.main.concept['6']} 
 			alt={'concept-6'} 
-			loading='lazy'
 		/>
-		<img 
-			src={images.Main.Concept['7']} 
+		<WebpImage
+			src={images.main.concept['7']} 
 			alt={'concept-7'} 
-			loading='lazy'
 		/>
-		<img 
-			src={images.Main.Concept['8']} 
+		<WebpImage
+			src={images.main.concept['8']} 
 			alt={'concept-8'} 
-			loading='lazy'
 		/>
 	</div>
 )

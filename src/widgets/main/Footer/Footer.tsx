@@ -1,4 +1,5 @@
-import { images } from '@/shared/assets/images';
+import { WebpImage } from '@/shared/ui/WebpImage'
+import { images } from '@/shared/lib/images'
 
 import styles from './Footer.module.scss'
 
@@ -19,18 +20,18 @@ export const Footer = () => {
 			</p>
 			<div className={styles.socials}>
 				<a className={styles.social} href={'https://t.me/cflats'} target={'_blank'} rel={'noreferrer noopener'}>
-					<img src={images.Main.Header.Telegram} alt={'telegram'} />
+					<WebpImage src={images.main.header.telegram} alt={'telegram'} />
 				</a>
 				<a className={styles.social} href={'https://x.com/cflatsproject'} target={'_blank'} rel={'noreferrer noopener'}>
-					<img src={images.Main.Header.X} alt={'x'} />
+					<WebpImage src={images.main.header.x} alt={'x'} />
 				</a>
 				<a className={styles.social} href={'https://discord.gg/cflats'} target={'_blank'} rel={'noreferrer noopener'}>
-					<img src={images.Main.Header.Discord} alt={'discord'} />
+					<WebpImage src={images.main.header.discord} alt={'discord'} />
 				</a>
 			</div>
-			<img
+			<WebpImage
 				className={styles.shape}
-				src={images.Main.Footer.Shape}
+				src={images.main.footer.shape}
 				alt={'shape'}
 			/>
 		</footer>

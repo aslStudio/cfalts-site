@@ -1,9 +1,10 @@
 import styles from './Team.module.scss'
 import React, { useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { images } from '@/shared/assets/images';
 import { useScrollAnimation } from '@/shared/lib/hooks/useScrollAnimation';
 import {InfoSection} from "@/shared/ui/InfoSection";
+import { images } from '@/shared/lib/images';
+import { WebpImage } from '@/shared/ui/WebpImage';
 
 export const Team = () => {
 	const { ref, classes } = useScrollAnimation()
@@ -29,13 +30,13 @@ export const Team = () => {
 const Rows = () => {
 	const row1 = [
 		{
-			src: images.Main.Team['1'],
+			src: images.main.team['1'],
 			name: 'Andrew Archie',
 			description: 'Architect and designer \n Dreamer, riding orka',
 			index: 1,
 		},
 		{
-			src: images.Main.Team['2'],
+			src: images.main.team['2'],
 			name: 'Nice Arti',
 			description: 'Blockchain Developer \n Give me Lamborghini',
 			index: 2,
@@ -43,13 +44,13 @@ const Rows = () => {
 	]
 	const row2 = [
 		{
-			src: images.Main.Team['3'],
+			src: images.main.team['3'],
 			name: 'Max Frei (MO)',
 			description: 'Architect and designer \n NFT world traveler',
 			index: 3,
 		},
 		{
-			src: images.Main.Team['4'],
+			src: images.main.team['4'],
 			name: 'Three Five Seven',
 			description: 'WEB3 Marketing \n Runs from runs',
 			index: 4,
@@ -75,25 +76,25 @@ const Rows = () => {
 const Slider = () => {
 	const data = [
 		{
-			src: images.Main.Team['1'],
+			src: images.main.team['1'],
 			name: 'Andrew Archie',
 			description: 'Architect and designer \n Dreamer, riding orka',
 			index: 1,
 		},
 		{
-			src: images.Main.Team['2'],
+			src: images.main.team['2'],
 			name: 'Nice Arti',
 			description: 'Blockchain Developer \n Give me Lamborghini',
 			index: 2,
 		},
 		{
-			src: images.Main.Team['3'],
+			src: images.main.team['3'],
 			name: 'Max Frei (MO)',
 			description: 'Architect and designer \n NFT world traveler',
 			index: 3,
 		},
 		{
-			src: images.Main.Team['4'],
+			src: images.main.team['4'],
 			name: 'Three Five Seven',
 			description: 'WEB3 Marketing \n Runs from runs',
 			index: 4,
@@ -127,11 +128,10 @@ const UserCell = React.memo<{
 }) => {
 	return (
 		<article className={styles.cell}>
-			<img 
+			<WebpImage 
 				className={styles[`avatar-${index}`]} 
 				src={src} 
-				alt={'avatar'} 
-			    loading="lazy"
+				alt={'avatar'}
 			/>
 			<p className={styles.title}>{name}</p>
 			<p className={styles.description}>{description}</p>

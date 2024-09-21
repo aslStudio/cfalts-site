@@ -4,7 +4,8 @@ import 'swiper/css';
 
 import styles from './RaritySlider.module.scss'
 import React, { useCallback, useMemo, useState } from 'react';
-import { images } from '@/shared/assets/images';
+import { WebpImage } from '@/shared/ui/WebpImage';
+import { images } from '@/shared/lib/images';
 
 type SlideTypes =
 	| 'goldPass'
@@ -122,41 +123,35 @@ const Background = React.memo<BackgroundProps>(({
 
 	return (
 		<div className={styles['bg-wrapper']}>
-			<img
+			<WebpImage
 				className={activeIndex === 0 ? styles['is-active'] : ''}
-				src={images.Main.Slider.Backgrounds.goldFlats}
+				src={images.main.slider.backgrounds.gold}
 				alt={'background'}
-				loading='lazy'
 			/>
-			<img
+			<WebpImage
 				className={activeIndex === 1 ? styles['is-active'] : ''}
-				src={images.Main.Slider.Backgrounds.diamondFlats}
+				src={images.main.slider.backgrounds.diamond}
 				alt={'background'}
-				loading='lazy'
 			/>
-			<img
+			<WebpImage
 				className={activeIndex === 2 ? styles['is-active'] : ''}
-				src={images.Main.Slider.Backgrounds.standardFlats}
+				src={images.main.slider.backgrounds.standart}
 				alt={'background'}
-				loading='lazy'
 			/>
-			<img
+			<WebpImage
 				className={activeIndex === 3 ? styles['is-active'] : ''}
-				src={images.Main.Slider.Backgrounds.silverFlats}
+				src={images.main.slider.backgrounds.silver}
 				alt={'background'}
-				loading='lazy'
 			/>
-			<img
+			<WebpImage
 				className={activeIndex === 4 ? styles['is-active'] : ''}
-				src={images.Main.Slider.Backgrounds.goldFlats}
+				src={images.main.slider.backgrounds.gold}
 				alt={'background'}
-				loading='lazy'
 			/>
-			<img
+			<WebpImage
 				className={activeIndex === 5 ? styles['is-active'] : ''}
-				src={images.Main.Slider.Backgrounds.diamondFlats}
+				src={images.main.slider.backgrounds.diamond}
 				alt={'background'}
-				loading='lazy'
 			/>
 		</div>
 	)
@@ -234,11 +229,10 @@ const Slide = React.memo<SliderProps>(({
 		<div className={styles.wrapper}>
 			<div className={styles.overlay} />
 			<div className={styles.content}>
-				<img
+				<WebpImage
 					className={roomClasses}
-					src={images.Main.Slider.Elements[type]}
+					src={images.main.slider.elements[type]}
 					alt={'room'}
-					loading='lazy'
 				/>
 				<div className={cardClasses}>
 					{content.map((item, key) => (

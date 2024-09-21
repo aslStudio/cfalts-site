@@ -1,9 +1,10 @@
-import { images } from '@/shared/assets/images';
-
-import styles from './Info.module.scss'
 import { IconBase } from '@/shared/ui/IconBase';
 import { useMemo } from 'react';
 import { Button } from '@/shared/ui/Button';
+import { images } from '@/shared/lib/images';
+import { WebpImage } from '@/shared/ui/WebpImage';
+
+import styles from './Info.module.scss'
 
 export const Info = () => {
 	const containerClasses = useMemo(() => [
@@ -26,7 +27,7 @@ const PromoCard = () => (
 			autoPlay={true}
 			loop={true}
 			muted={true}
-			poster={'/images/preview.png'}
+			poster={images.main.info.game.preview}
 			preload='none'
 		>
 			<source src={'/videos/promo.mp4'} type={'video/mp4'} />
@@ -48,8 +49,8 @@ const MintCard = () => {
 		<article className={styles['mint-card']}>
 			{Array(6).fill(1).map((_, key) => (
 				<div key={key} className={styles[`image-${key + 1}`]}>
-					<img
-						src={images.Main.Info.Mint[`${key + 1}` as keyof typeof images.Main.Info.Mint]}
+					<WebpImage
+						src={images.main.info.mint[`${key + 1}` as keyof typeof images.main.info.mint]}
 						alt={`image-${key + 1}`}
 					/>
 				</div>

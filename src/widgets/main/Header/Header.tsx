@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 
-import { images } from '@/shared/assets/images';
+
 
 import { Burger } from './ui'
 import styles from './Header.module.scss'
 import React, {useState} from "react";
 import {createPortal} from "react-dom";
 import {ModalConnectWallet} from "@/features/ModalConnectWallet/ModalConnectWallet";
+import { WebpImage } from '@/shared/ui/WebpImage';
+import { images } from '@/shared/lib/images';
 
 export const Header = () => {
 	const [isOpen, setIsOpen] = useState(false)
@@ -16,7 +18,7 @@ export const Header = () => {
 		<>
 			<header className={styles.root}>
 				<div className={`${styles.container} container`}>
-					<img className={styles.logo} src={images.Main.Header.Logo} alt={'Logo'}/>
+					<WebpImage className={styles.logo} src={images.main.header.logo} alt={'Logo'}/>
 					<div className={styles.info}>
 						<div className={styles.links}>
 							<Link className={styles.link} to={'/'}>Token</Link>
@@ -32,17 +34,17 @@ export const Header = () => {
 						</div>
 						<div className={styles.socials}>
 							<a className={styles.social} href={'https://t.me/cflats'} target={'_blank'} rel={'noreferrer noopener'}>
-								<img src={images.Main.Header.Telegram} alt={'telegram'}/>
+								<WebpImage src={images.main.header.telegram} alt={'telegram'}/>
 							</a>
 							<a className={styles.social} href={'https://x.com/cflatsproject'} target={'_blank'} rel={'noreferrer noopener'}>
-								<img src={images.Main.Header.X} alt={'x'}/>
+								<WebpImage src={images.main.header.x} alt={'x'}/>
 							</a>
 							<a className={styles.social} href={'https://discord.gg/cflats'} target={'_blank'} rel={'noreferrer noopener'}>
-								<img src={images.Main.Header.Discord} alt={'discord'}/>
+								<WebpImage src={images.main.header.discord} alt={'discord'}/>
 							</a>
 						</div>
 						<button className={styles.wallet} onClick={() => setIsConnectWallet(true)}>
-							<img src={images.Main.Header.Wallet} alt={'wallet'}/>
+							<WebpImage src={images.main.header.wallet} alt={'wallet'}/>
 						</button>
 						<Burger
 							isOpen={isOpen}
@@ -93,7 +95,7 @@ const Dropdown = React.memo<DropdownProps>(({ isOpen, onClose }) => {
 					rel={'noreferrer noopener'}
 					onClick={onClose}
 				>
-					<img src={images.Main.Header.Telegram} alt={'telegram'}/>
+					<WebpImage src={images.main.header.telegram} alt={'telegram'}/>
 				</a>
 				<a
 					className={styles.social}
@@ -102,7 +104,7 @@ const Dropdown = React.memo<DropdownProps>(({ isOpen, onClose }) => {
 					rel={'noreferrer noopener'}
 					onClick={onClose}
 				>
-					<img src={images.Main.Header.X} alt={'x'}/>
+					<WebpImage src={images.main.header.x} alt={'x'}/>
 				</a>
 				<a
 					className={styles.social}
@@ -111,7 +113,7 @@ const Dropdown = React.memo<DropdownProps>(({ isOpen, onClose }) => {
 					rel={'noreferrer noopener'}
 					onClick={onClose}
 				>
-					<img src={images.Main.Header.Discord} alt={'discord'}/>
+					<WebpImage src={images.main.header.discord} alt={'discord'}/>
 				</a>
 			</div>
 		</div>,

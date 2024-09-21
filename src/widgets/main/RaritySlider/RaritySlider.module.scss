@@ -26,7 +26,7 @@
     width: 100%;
     height: 100%;
 
-    & img {
+    & picture {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -42,7 +42,7 @@
         transition-property: opacity, filter;
     }
 
-    & img.is-active {
+    & picture.is-active {
         opacity: 1;
         filter: blur(0);
     }

@@ -7,7 +7,10 @@
     "email": "contact@cryptoflats.io",
     "url": "https://cryptoflats.io"
   },
-  "contributors": ["Vlad Astahov", "aslStudio"],
+  "contributors": [
+    "Vlad Astahov",
+    "aslStudio"
+  ],
   "dependencies": {
     "@effector/reflect": "^9.2.0",
     "@testing-library/jest-dom": "^5.17.0",
@@ -21,6 +24,11 @@
     "axios": "^1.7.3",
     "effector": "^23.2.2",
     "effector-react": "^23.2.1",
+    "fs": "^0.0.1-security",
+    "imagemin": "^9.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "ncp": "^2.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
@@ -28,6 +36,8 @@
     "react-scripts": "5.0.1",
     "react-use-websocket": "^4.8.1",
     "sass": "^1.77.8",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2",
     "swiper": "^11.1.14",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -36,7 +46,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "images": "node ./scripts/images.js"
   },
   "eslintConfig": {
     "extends": [

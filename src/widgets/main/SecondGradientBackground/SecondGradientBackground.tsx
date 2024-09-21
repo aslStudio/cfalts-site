@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { images } from '@/shared/assets/images';
 import { OpacityImage } from '@/shared/ui/OpacityImage';
 
 import styles from './SecondGradientBackground.module.scss'
+import { images } from '@/shared/lib/images';
 
 export const SecondGradientBackground = React.memo<React.PropsWithChildren>(({
 	children
@@ -12,12 +12,12 @@ export const SecondGradientBackground = React.memo<React.PropsWithChildren>(({
 		<div className={styles.root}>
 			<OpacityImage 
 				className={styles['background-1']} 
-				src={images.Main.Gradient2.Background} 
+				src={images.main.gradient2.default} 
 				alt={'background'}
 			/>
 			<OpacityImage
 				className={styles['background-2']} 
-				src={images.Main.Gradient2.Background} 
+				src={images.main.gradient2.default} 
 				alt={'background'}
 			/>
 			{children}

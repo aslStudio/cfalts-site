@@ -1,15 +1,15 @@
 import Marquee from 'react-fast-marquee';
 
-import { images } from '@/shared/assets/images';
-
 import styles from './Marquee.module.scss'
+import { WebpImage } from '@/shared/ui/WebpImage';
+import { images } from '@/shared/lib/images';
 
 export const MarqueeSection = () => {
 	return (
 		<div>
 			<Marquee speed={50} className={styles.row} autoFill={true}>
-				{Object.values(images.Main.Marquee.first).map((item, key) => (
-					<img
+				{Object.values(images.main.marquee.first).map((item, key) => (
+					<WebpImage
 						className={styles.image}
 						key={key}
 						src={item}
@@ -18,8 +18,8 @@ export const MarqueeSection = () => {
 				))}
 			</Marquee>
 			<Marquee speed={100} className={styles.row} direction={'right'} autoFill={true}>
-				{Object.values(images.Main.Marquee.second).map((item, key) => (
-					<img
+				{Object.values(images.main.marquee.second).map((item, key) => (
+					<WebpImage
 						className={styles.image}
 						key={key}
 						src={item}
@@ -28,8 +28,8 @@ export const MarqueeSection = () => {
 				))}
 			</Marquee>
 			<Marquee speed={150} className={styles.row} autoFill={true}>
-				{Object.values(images.Main.Marquee.third).map((item, key) => (
-					<img
+				{Object.values(images.main.marquee.third).map((item, key) => (
+					<WebpImage
 						className={styles.image}
 						key={key}
 						src={item}

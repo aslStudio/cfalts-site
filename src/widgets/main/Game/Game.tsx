@@ -1,7 +1,8 @@
-import { images } from '@/shared/assets/images';
+import { useScrollAnimation } from '@/shared/lib/hooks/useScrollAnimation';
+import { images } from '@/shared/lib/images';
+import { WebpImage } from '@/shared/ui/WebpImage';
 
 import styles from './Game.module.scss'
-import { useScrollAnimation } from '@/shared/lib/hooks/useScrollAnimation';
 
 export const Game = () => {
 	const { ref, classes, isShowed } = useScrollAnimation()
@@ -21,17 +22,15 @@ export const Game = () => {
 				</p>
 			</div>
 			<div className={styles.image}>
-				<img
+				<WebpImage
 					className={`${styles['image-left']} ${isShowed ? styles['is-active'] : ''}`}
-					src={images.Main.Game.left}
+					src={images.main.game.phoneLeft}
 					alt={'phone-left'}
-			    	loading="lazy"
 				/>
-				<img
+				<WebpImage
 					className={`${styles['image-right']} ${isShowed ? styles['is-active'] : ''}`}
-					src={images.Main.Game.right}
+					src={images.main.game.phoneRight}
 					alt={'phone-left'}
-			    	loading="lazy"
 				/>
 			</div>
 		</section>

@@ -2,8 +2,9 @@ import React, {useMemo} from "react";
 import {createPortal} from "react-dom";
 
 import styles from './ModalConnectWallet.module.scss'
-import {images} from "@/shared/assets/images";
 import {IconBase, IconBaseProps} from "@/shared/ui/IconBase";
+import { images } from "@/shared/lib/images";
+import { WebpImage } from "@/shared/ui/WebpImage";
 
 export type ModalConnectWalletProps = {
     isOpen: boolean
@@ -18,11 +19,10 @@ export const ModalConnectWallet = React.memo<ModalConnectWalletProps>(({
         <div className={`${styles.root} ${isOpen ? styles['is-open'] : ''}`}>
             <div className={styles.overlay} onClick={() => onClose(false)} />
             <article className={styles.card}>
-                <img
+                <WebpImage
                     className={styles.background}
-                    src={images.ConnectWallet.background}
+                    src={images.connectWallet.background}
                     alt={'background'}
-                    loading="lazy"
                 />
                 {isOpen && (
                     <div className={styles.particles}>
@@ -39,22 +39,20 @@ export const ModalConnectWallet = React.memo<ModalConnectWalletProps>(({
                     <IconBase type={'icon-close'}/>
                 </button>
                 <div className={styles.wrapper}>
-                    <img
+                    <WebpImage
                         className={styles.logo}
-                        src={images.ConnectWallet.logo}
+                        src={images.connectWallet.logo}
                         alt={'logo'}
-                    loading="lazy"
                     />
                     <h4 className={styles.title}>Connect to Cryptoflats</h4>
                     <Cell type={'metamask'} badge={'Popular'} onClick={() => onClose(false)}/>
                     <Cell type={'coinbase'} onClick={() => onClose(false)}/>
                     <Cell type={'wallet'} onClick={() => onClose(false)}/>
                 </div>
-                <img
+                <WebpImage
                     className={styles.boy}
-                    src={images.ConnectWallet.boy}
+                    src={images.connectWallet.boy}
                     alt={'boy'}
-                    loading="lazy"
                 />
             </article>
         </div>,
