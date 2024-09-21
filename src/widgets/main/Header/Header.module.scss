@@ -40,11 +40,11 @@
 }
 
 .logo {
-    width: 210px;
+    width: auto;
     height: 42px;
 
     @include media-tablet() {
-        width: 314px;
+        width: auto;
         height: 60px;
     }
 }
