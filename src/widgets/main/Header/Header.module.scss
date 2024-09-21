@@ -40,11 +40,15 @@
 }
 
 .logo {
-    width: auto;
+    width: 210px;
     height: 42px;
 
+    & img {
+        object-fit: contain!important;
+    }
+
     @include media-tablet() {
-        width: auto;
+        width: 314px;
         height: 60px;
     }
 }
