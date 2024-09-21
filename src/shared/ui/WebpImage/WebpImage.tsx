@@ -18,8 +18,8 @@ export const WebpImage = React.memo<WebpImageProps>(({
     onLoad,
 }) => (
     <picture className={`${styles.root} ${className ? className : ''}`} onLoad={onLoad}>
-        <source type={"image/webp"} width={"100px"} height={"100px"} srcSet={`${src}.webp`}/>
-        <source type={`image/${exc}`} width={"100px"} height={"100px"} srcSet={`${src}.${exc}`}/>
-        <img srcSet={`${src}.${exc}`} alt={alt} loading={"lazy"}/>
+        <source srcSet={`${src}.webp`} type="image/webp" />
+        <source srcSet={`${src}.png`} type="image/png" />
+        <img src={`${src}.png`} alt={alt} />
     </picture>
 ))
