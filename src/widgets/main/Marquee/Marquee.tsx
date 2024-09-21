@@ -17,7 +17,7 @@ export const MarqueeSection = () => {
 					/>
 				))}
 			</Marquee>
-			<Marquee speed={100} className={styles.row} direction={'right'} autoFill={true}>
+			<Marquee speed={75} className={styles.row} direction={'right'} autoFill={true}>
 				{Object.values(images.main.marquee.second).map((item, key) => (
 					<WebpImage
 						className={styles.image}
@@ -27,7 +27,7 @@ export const MarqueeSection = () => {
 					/>
 				))}
 			</Marquee>
-			<Marquee speed={150} className={styles.row} autoFill={true}>
+			<Marquee speed={100} className={styles.row} autoFill={true}>
 				{Object.values(images.main.marquee.third).map((item, key) => (
 					<WebpImage
 						className={styles.image}
