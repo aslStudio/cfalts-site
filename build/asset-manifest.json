@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.bce8eb1c.css",
+    "main.css": "/static/css/main.45ba3bdf.css",
     "main.js": "/static/js/main.be940af7.js",
     "static/js/453.1eae8d15.chunk.js": "/static/js/453.1eae8d15.chunk.js",
     "static/media/desktop.png": "/static/media/desktop.74a6a26cdee941f062f9.png",
@@ -74,14 +74,14 @@
     "static/media/18-min.jpg": "/static/media/18-min.1f15c8ac68a4610301f0.jpg",
     "static/media/4-min.jpg": "/static/media/4-min.dbd19fbe9c4f51806413.jpg",
     "static/media/30-min.jpg": "/static/media/30-min.d7e0eaff78163b2e4ab6.jpg",
-    "static/media/icon-coinbasesvg.svg": "/static/media/icon-coinbasesvg.5f846768967fc1640020af9e625e84f1.svg",
     "index.html": "/index.html",
-    "main.bce8eb1c.css.map": "/static/css/main.bce8eb1c.css.map",
+    "static/media/icon-coinbasesvg.svg": "/static/media/icon-coinbasesvg.5f846768967fc1640020af9e625e84f1.svg",
+    "main.45ba3bdf.css.map": "/static/css/main.45ba3bdf.css.map",
     "main.be940af7.js.map": "/static/js/main.be940af7.js.map",
     "453.1eae8d15.chunk.js.map": "/static/js/453.1eae8d15.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bce8eb1c.css",
+    "static/css/main.45ba3bdf.css",
     "static/js/main.be940af7.js"
   ]
 }
