@@ -53,7 +53,7 @@ export const RaritySlider = () => {
 					</button>
 					<button
 						className={getTabClasses(2)}
-						onClick={() => swiper.slideTo(2)}
+						onClick={() => swiper?.slideTo(2)}
 					>
 						STANDARD FLATS
 					</button>
@@ -73,7 +73,7 @@ export const RaritySlider = () => {
 					</button>
 					<button
 						className={getTabClasses(5)}
-						onClick={() => swiper.slideTo(5)}
+						onClick={() => swiper?.slideTo(5)}
 					>
 						DIAMOND FLATS
 					</button>
@@ -126,31 +126,37 @@ const Background = React.memo<BackgroundProps>(({
 				className={activeIndex === 0 ? styles['is-active'] : ''}
 				src={images.Main.Slider.Backgrounds.goldFlats}
 				alt={'background'}
+				loading='lazy'
 			/>
 			<img
 				className={activeIndex === 1 ? styles['is-active'] : ''}
 				src={images.Main.Slider.Backgrounds.diamondFlats}
 				alt={'background'}
+				loading='lazy'
 			/>
 			<img
 				className={activeIndex === 2 ? styles['is-active'] : ''}
 				src={images.Main.Slider.Backgrounds.standardFlats}
 				alt={'background'}
+				loading='lazy'
 			/>
 			<img
 				className={activeIndex === 3 ? styles['is-active'] : ''}
 				src={images.Main.Slider.Backgrounds.silverFlats}
 				alt={'background'}
+				loading='lazy'
 			/>
 			<img
 				className={activeIndex === 4 ? styles['is-active'] : ''}
 				src={images.Main.Slider.Backgrounds.goldFlats}
 				alt={'background'}
+				loading='lazy'
 			/>
 			<img
 				className={activeIndex === 5 ? styles['is-active'] : ''}
 				src={images.Main.Slider.Backgrounds.diamondFlats}
 				alt={'background'}
+				loading='lazy'
 			/>
 		</div>
 	)
@@ -232,6 +238,7 @@ const Slide = React.memo<SliderProps>(({
 					className={roomClasses}
 					src={images.Main.Slider.Elements[type]}
 					alt={'room'}
+					loading='lazy'
 				/>
 				<div className={cardClasses}>
 					{content.map((item, key) => (

@@ -25,11 +25,13 @@ export const Game = () => {
 					className={`${styles['image-left']} ${isShowed ? styles['is-active'] : ''}`}
 					src={images.Main.Game.left}
 					alt={'phone-left'}
+			    	loading="lazy"
 				/>
 				<img
 					className={`${styles['image-right']} ${isShowed ? styles['is-active'] : ''}`}
 					src={images.Main.Game.right}
 					alt={'phone-left'}
+			    	loading="lazy"
 				/>
 			</div>
 		</section>

@@ -12,11 +12,13 @@ export const FirstGradientBackground = React.memo<React.PropsWithChildren>(({
 			className={styles.desktop}
 			src={images.Main.Gradient1.desktop}
 			alt={'desktop-decoration'}
+			loading="lazy"
 		/>
 		<img
 			className={styles.mobile}
 			src={images.Main.Gradient1.mobile}
 			alt={'mobile-decoration'}
+			loading="lazy"
 		/>
 		{children}
 	</div>

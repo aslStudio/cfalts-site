@@ -8,8 +8,18 @@ export const SecondGradientBackground = React.memo<React.PropsWithChildren>(({
 }) => {
 	return (
 		<div className={styles.root}>
-			<img className={styles['background-1']} src={images.Main.Gradient2.Background} alt={'background'} />
-			<img className={styles['background-2']} src={images.Main.Gradient2.Background} alt={'background'} />
+			<img 
+				className={styles['background-1']} 
+				src={images.Main.Gradient2.Background} 
+				alt={'background'} 
+				loading="lazy"
+			/>
+			<img 
+				className={styles['background-2']} 
+				src={images.Main.Gradient2.Background} 
+				alt={'background'} 
+				loading="lazy"
+			/>
 			{children}
 		</div>
 	)

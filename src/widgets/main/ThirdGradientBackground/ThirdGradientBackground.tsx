@@ -14,11 +14,13 @@ export const ThirdGradientBackground = React.memo<
                 className={styles.desktop}
                 src={images.Main.Gradient3.desktop}
                 alt={'desktop-decoration'}
+			    loading="lazy"
             />
             <img
                 className={styles.mobile}
                 src={images.Main.Gradient3.mobile}
                 alt={'desktop-decoration'}
+			    loading="lazy"
             />
             {children}
         </div>

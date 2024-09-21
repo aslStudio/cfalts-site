@@ -22,16 +22,19 @@ export const ModalConnectWallet = React.memo<ModalConnectWalletProps>(({
                     className={styles.background}
                     src={images.ConnectWallet.background}
                     alt={'background'}
+                    loading="lazy"
                 />
-                <div className={styles.particles}>
-                    {Array(50)
-                        .fill(0)
-                        .map((_, key) => (
-                            <div key={key} className={styles['circle-container']}>
-                                <div className={styles['circle']}/>
-                            </div>
-                        ))}
-                </div>
+                {isOpen && (
+                    <div className={styles.particles}>
+                        {Array(50)
+                            .fill(0)
+                            .map((_, key) => (
+                                <div key={key} className={styles['circle-container']}>
+                                    <div className={styles['circle']}/>
+                                </div>
+                            ))}
+                    </div>
+                )}
                 <button className={styles.close} onClick={() => onClose(false)}>
                     <IconBase type={'icon-close'}/>
                 </button>
@@ -40,6 +43,7 @@ export const ModalConnectWallet = React.memo<ModalConnectWalletProps>(({
                         className={styles.logo}
                         src={images.ConnectWallet.logo}
                         alt={'logo'}
+                    loading="lazy"
                     />
                     <h4 className={styles.title}>Connect to Cryptoflats</h4>
                     <Cell type={'metamask'} badge={'Popular'} onClick={() => onClose(false)}/>
@@ -50,6 +54,7 @@ export const ModalConnectWallet = React.memo<ModalConnectWalletProps>(({
                     className={styles.boy}
                     src={images.ConnectWallet.boy}
                     alt={'boy'}
+                    loading="lazy"
                 />
             </article>
         </div>,

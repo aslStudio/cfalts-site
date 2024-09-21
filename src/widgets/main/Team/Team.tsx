@@ -127,7 +127,12 @@ const UserCell = React.memo<{
 }) => {
 	return (
 		<article className={styles.cell}>
-			<img className={styles[`avatar-${index}`]} src={src} alt={'avatar'} />
+			<img 
+				className={styles[`avatar-${index}`]} 
+				src={src} 
+				alt={'avatar'} 
+			    loading="lazy"
+			/>
 			<p className={styles.title}>{name}</p>
 			<p className={styles.description}>{description}</p>
 		</article>

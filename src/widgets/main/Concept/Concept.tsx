@@ -24,13 +24,45 @@ export const Concept = () => {
 
 const AnimatedRoom = () => (
 	<div className={styles.room}>
-		<img src={images.Main.Concept['1']} alt={'concept-1'} />
-		<img src={images.Main.Concept['2']} alt={'concept-2'} />
-		<img src={images.Main.Concept['3']} alt={'concept-3'} />
-		<img src={images.Main.Concept['4']} alt={'concept-4'} />
-		<img src={images.Main.Concept['5']} alt={'concept-5'} />
-		<img src={images.Main.Concept['6']} alt={'concept-6'} />
-		<img src={images.Main.Concept['7']} alt={'concept-7'} />
-		<img src={images.Main.Concept['8']} alt={'concept-8'} />
+		<img 
+			src={images.Main.Concept['1']} 
+			alt={'concept-1'} 
+			loading='lazy'
+		/>
+		<img 
+			src={images.Main.Concept['2']} 
+			alt={'concept-2'} 
+			loading='lazy'
+		/>
+		<img 
+			src={images.Main.Concept['3']} 
+			alt={'concept-3'} 
+			loading='lazy'
+		/>
+		<img 
+			src={images.Main.Concept['4']} 
+			alt={'concept-4'} 
+			loading='lazy'
+		/>
+		<img 
+			src={images.Main.Concept['5']} 
+			alt={'concept-5'} 
+			loading='lazy'
+		/>
+		<img 
+			src={images.Main.Concept['6']} 
+			alt={'concept-6'} 
+			loading='lazy'
+		/>
+		<img 
+			src={images.Main.Concept['7']} 
+			alt={'concept-7'} 
+			loading='lazy'
+		/>
+		<img 
+			src={images.Main.Concept['8']} 
+			alt={'concept-8'} 
+			loading='lazy'
+		/>
 	</div>
 )
