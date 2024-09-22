@@ -1,10 +1,10 @@
 import React, {useMemo} from "react";
-import {createPortal} from "react-dom";
 
 import styles from './ModalConnectWallet.module.scss'
 import {IconBase, IconBaseProps} from "@/shared/ui/IconBase";
 import { images } from "@/shared/lib/images";
 import { WebpImage } from "@/shared/ui/WebpImage";
+import { Modal } from "@/shared/ui/Modal";
 
 export type ModalConnectWalletProps = {
     isOpen: boolean
@@ -15,48 +15,48 @@ export const ModalConnectWallet = React.memo<ModalConnectWalletProps>(({
     isOpen,
     onClose
 }) => {
-    return createPortal(
-        <div className={`${styles.root} ${isOpen ? styles['is-open'] : ''}`}>
-            <div className={styles.overlay} onClick={() => onClose(false)} />
-            <article className={styles.card}>
-                <WebpImage
-                    className={styles.background}
-                    src={images.connectWallet.background}
-                    alt={'background'}
-                />
-                {isOpen && (
-                    <div className={styles.particles}>
-                        {Array(50)
-                            .fill(0)
-                            .map((_, key) => (
-                                <div key={key} className={styles['circle-container']}>
-                                    <div className={styles['circle']}/>
-                                </div>
-                            ))}
-                    </div>
-                )}
-                <button className={styles.close} onClick={() => onClose(false)}>
-                    <IconBase type={'icon-close'}/>
-                </button>
-                <div className={styles.wrapper}>
-                    <WebpImage
-                        className={styles.logo}
-                        src={images.connectWallet.logo}
-                        alt={'logo'}
-                    />
-                    <h4 className={styles.title}>Connect to Cryptoflats</h4>
-                    <Cell type={'metamask'} badge={'Popular'} onClick={() => onClose(false)}/>
-                    <Cell type={'coinbase'} onClick={() => onClose(false)}/>
-                    <Cell type={'wallet'} onClick={() => onClose(false)}/>
+    return (
+        <Modal 
+            isOpen={isOpen} 
+            cardStyles={styles.card}
+            onClose={() => onClose(false)}
+        >
+            <WebpImage
+                className={styles.background}
+                src={images.connectWallet.background}
+                alt={'background'}
+            />
+            {isOpen && (
+                <div className={styles.particles}>
+                    {Array(50)
+                        .fill(0)
+                        .map((_, key) => (
+                            <div key={key} className={styles['circle-container']}>
+                                <div className={styles['circle']}/>
+                            </div>
+                        ))}
                 </div>
+            )}
+            <button className={styles.close} onClick={() => onClose(false)}>
+                <IconBase type={'icon-close'}/>
+            </button>
+            <div className={styles.wrapper}>
                 <WebpImage
-                    className={styles.boy}
-                    src={images.connectWallet.boy}
-                    alt={'boy'}
+                    className={styles.logo}
+                    src={images.connectWallet.logo}
+                    alt={'logo'}
                 />
-            </article>
-        </div>,
-        document.querySelector('#root')!
+                <h4 className={styles.title}>Connect to Cryptoflats</h4>
+                <Cell type={'metamask'} badge={'Popular'} onClick={() => onClose(false)}/>
+                <Cell type={'coinbase'} onClick={() => onClose(false)}/>
+                <Cell type={'wallet'} onClick={() => onClose(false)}/>
+            </div>
+            <WebpImage
+                className={styles.boy}
+                src={images.connectWallet.boy}
+                alt={'boy'}
+            />
+        </Modal>
     )
 })
 
@@ -67,9 +67,9 @@ export type CellProps = {
 }
 
 const Cell = React.memo<CellProps>(({
-                                        type,
-                                        badge,
-                                        onClick,
+    type,
+    badge,
+    onClick,
 }) => {
     const icon = useMemo<IconBaseProps['type']>(() => {
         switch (type) {

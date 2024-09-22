@@ -1,55 +1,5 @@
 @import "src/app/styles/mixins.scss";
 
-.root {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9;
-    pointer-events: none;
-
-    &.is-open {
-        pointer-events: auto;
-
-        & .overlay {
-            opacity: 0.9;
-        }
-
-        & .card {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        @include media-tablet() {
-            z-index: 20;
-        }
-    }
-}
-
-.overlay {
-    display: none;
-
-    @include media-tablet() {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-
-        background-color: #171E27;
-
-        opacity: 0;
-
-        transition: 0.3s ease;
-        transition-property: opacity;
-    }
-}
-
 .card {
     position: relative;
     width: 100vw;
@@ -62,12 +12,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    transform: translateY(100%);
-    opacity: 0;
-
-    transition: 0.3s ease;
-    transition-property: transform, opacity;
 
     @include media-tablet() {
         width: 420px;
@@ -89,6 +33,7 @@
 
     @include media-tablet() {
         border-radius: 16px;
+        overflow: hidden;
     }
 }
 
@@ -154,7 +99,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 154px;
-    margin-bottom: -9px;
+    margin-bottom: -14px;
 }
 
 .wrapper {

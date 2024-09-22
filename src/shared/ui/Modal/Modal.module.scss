@@ -1,0 +1,58 @@
+@import "src/app/styles/mixins.scss";
+
+.root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    &.is-open {
+        width: 100vw;
+        height: 100vh;
+        pointer-events: auto;
+
+        & .overlay {
+            opacity: 0.9;
+        }
+
+        & .card {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @include media-tablet() {
+            z-index: 20;
+        }
+    }
+}
+
+.overlay {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #171E27;
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+    transition-property: opacity;
+}
+
+.card {
+    transform: translateY(100%);
+    opacity: 0;
+
+    transition: 0.3s ease;
+    transition-property: transform, opacity;
+}

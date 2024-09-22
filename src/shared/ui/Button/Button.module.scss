@@ -9,6 +9,15 @@
 }
 
 .size {
+    &-l {
+        padding: 18px;
+        border-radius: 12px;
+
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+
     &-m {
         padding: 7px 20px;
         border-radius: 22px;
@@ -56,6 +65,22 @@
 
     &-purple {
         background: url("../../assets/images/common/button-bg.png");
+        color: #fff;
+
+        opacity: 1;
+
+        transition: 0.3s ease;
+        transition-property: opacity;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &-pink {
+        background: url("../../assets/images/common/btn-bg-pink.png");
+        background-repeat: no-repeat;
+        background-size: cover;
         color: #fff;
 
         opacity: 1;

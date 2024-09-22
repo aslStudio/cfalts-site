@@ -1,6 +1,11 @@
 export const images = {
     common: {
-        buttonBg: '/images/common/button-bg'
+        buttonBg: '/images/common/button-bg',
+        chevronBottom: '/images/common/chevron-bottom',
+        eth: '/images/common/eth',
+        cflat: '/images/common/cfalts',
+        buyer: '/images/common/buyer',
+        wallet: '/images/common/wallet'
     },
     connectWallet: {
         background: '/images/connectWallet/background',

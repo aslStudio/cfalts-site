@@ -1,18 +1,20 @@
 import { Link } from 'react-router-dom';
+import React, {useState} from "react";
+import {createPortal} from "react-dom";
 
+import {ModalConnectWallet} from "@/features/ModalConnectWallet/ModalConnectWallet";
+import {TokenSaleModal} from "@/features/TokenSaleModal";
 
+import { WebpImage } from '@/shared/ui/WebpImage';
+import { images } from '@/shared/lib/images';
 
 import { Burger } from './ui'
 import styles from './Header.module.scss'
-import React, {useState} from "react";
-import {createPortal} from "react-dom";
-import {ModalConnectWallet} from "@/features/ModalConnectWallet/ModalConnectWallet";
-import { WebpImage } from '@/shared/ui/WebpImage';
-import { images } from '@/shared/lib/images';
 
 export const Header = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const [isConnectWallet, setIsConnectWallet] = useState(false)
+	const [isTokenSale, setIsTokenSale] = useState(false)
 
 	return (
 		<>
@@ -21,7 +23,7 @@ export const Header = () => {
 					<WebpImage className={styles.logo} src={images.main.header.logo} alt={'Logo'}/>
 					<div className={styles.info}>
 						<div className={styles.links}>
-							<Link className={styles.link} to={'/'}>Token</Link>
+							<a className={styles.link} onClick={() => setIsTokenSale(true)}>Token</a>
 							<Link className={styles.link} to={'/'}>Mint</Link>
 							<a
 								className={styles.link}
@@ -56,10 +58,18 @@ export const Header = () => {
 				<Dropdown
 					isOpen={isOpen}
 					onClose={() => setIsOpen(false)}
+					onToken={() => {
+						setIsOpen(false)
+						setIsTokenSale(true)
+					}}
 				/>
 				<ModalConnectWallet
 					isOpen={isConnectWallet}
 					onClose={() => setIsConnectWallet(false)}
+				/>
+				<TokenSaleModal 
+					isOpen={isTokenSale}
+					onClose={() => setIsTokenSale(false)}
 				/>
 			</header>
 		</>
@@ -69,13 +79,14 @@ export const Header = () => {
 type DropdownProps = {
 	isOpen: boolean
 	onClose: () => void
+	onToken: () => void
 }
 
-const Dropdown = React.memo<DropdownProps>(({ isOpen, onClose }) => {
+const Dropdown = React.memo<DropdownProps>(({ isOpen, onClose, onToken }) => {
 	return createPortal(
 		<div className={`${styles.dropdown} ${isOpen ? styles['is-active'] : ''}`}>
 			<div className={styles['dropdown-links']}>
-				<Link className={styles['dropdown-link']} to={'/'} onClick={onClose}>Token</Link>
+				<a className={styles['dropdown-link']} onClick={onToken}>Token</a>
 				<Link className={styles['dropdown-link']} to={'/'} onClick={onClose}>Mint</Link>
 				<a
 					className={styles['dropdown-link']}
