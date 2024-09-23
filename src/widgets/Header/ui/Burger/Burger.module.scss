@@ -29,7 +29,7 @@
 .is-active {
     & span {
         &:nth-child(1) {
-            transform: rotate(45deg) translateY(6px) translateX(4px);
+            transform: rotate(45deg) translateY(7px) translateX(4px);
         }
 
         &:nth-child(2) {
@@ -37,7 +37,7 @@
         }
 
         &:nth-child(3) {
-            transform: rotate(-45deg) translateY(-8px) translateX(4px);
+            transform: rotate(-45deg) translateY(-7px) translateX(4px);
         }
     }
 }

@@ -1,11 +1,9 @@
-import React from 'react'
 import {
 	About,
 	Concept,
-	FirstGradientBackground, Footer, Form,
+	FirstGradientBackground,
 	Game,
 	Goal,
-	Header,
 	Info,
 	Marquee,
 	RarityProperties,
@@ -14,6 +12,9 @@ import {
 	SecondGradientBackground,
 	Team, ThirdGradientBackground
 } from '@/widgets/main';
+import { Header } from '@/widgets/Header'
+import { Footer } from '@/widgets/Footer'
+import { Form } from '@/widgets/Form'
 import {useLazyVideo} from "@/shared/lib/hooks/useLazyVideo";
 
 export const Main = () => {

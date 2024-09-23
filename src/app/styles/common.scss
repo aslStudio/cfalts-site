@@ -87,8 +87,8 @@ p {
     padding-right: toRem(80);
     padding-left: toRem(80);
   }
-    @media (min-width: 1300px) {
-        padding-right: 0;
-        padding-left: 0;
-    }
+  @media (min-width: 1300px) {
+      padding-right: 0;
+      padding-left: 0;
+  }
 }

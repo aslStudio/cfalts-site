@@ -1,0 +1,21 @@
+@import "src/app/styles/index.scss";
+
+.root {
+    width: 100%;
+    height: calc(100vh - 80px);
+    margin: 0 auto;
+    background-color: #222B37;
+    margin-bottom: 50px;
+
+    @include media-tablet() {
+        height: 700px;
+        margin-bottom: 70px;
+    }
+
+    @include media-desktop() {
+        width: calc(100vw - toRem(160));
+        box-sizing: border-box;
+        max-width: 1700px;
+        border-radius: 64px;
+    }
+}

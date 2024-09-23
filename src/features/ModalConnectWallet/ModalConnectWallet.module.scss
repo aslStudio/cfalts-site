@@ -98,8 +98,14 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 154px;
-    margin-bottom: -14px;
+    height: 25vh;
+    margin-bottom: -1.5vh;
+
+    @include media-tablet() {
+        width: 154px;
+        height: auto;
+        margin-bottom: -14px;
+    }
 }
 
 .wrapper {
@@ -219,7 +225,7 @@
     height: 20px;
     position: absolute;
     top: 128px;
-    right: 18px;
+    right: 27px;
     background: none;
     border: none;
     outline: none;
@@ -227,12 +233,11 @@
     z-index: 20;
     cursor: pointer;
 
-    & img {
+    & picture {
         width: 100%;
     }
 
     @include media-tablet() {
         top: 24px;
-        right: 18px;
     }
 }

@@ -20,11 +20,19 @@ export const Header = () => {
 		<>
 			<header className={styles.root}>
 				<div className={`${styles.container} container`}>
-					<WebpImage className={styles.logo} src={images.main.header.logo} alt={'Logo'}/>
+					<Link
+						className={styles.logo}  
+						to={'/'}
+					>
+						<WebpImage 
+							src={images.main.header.logo} 
+							alt={'Logo'}
+						/>
+					</Link>
 					<div className={styles.info}>
 						<div className={styles.links}>
 							<a className={styles.link} onClick={() => setIsTokenSale(true)}>Token</a>
-							<Link className={styles.link} to={'/'}>Mint</Link>
+							<Link className={styles.link} to={'/mint'}>Mint</Link>
 							<a
 								className={styles.link}
 								href={'https://docs.cryptoflats.io/'}
@@ -87,7 +95,7 @@ const Dropdown = React.memo<DropdownProps>(({ isOpen, onClose, onToken }) => {
 		<div className={`${styles.dropdown} ${isOpen ? styles['is-active'] : ''}`}>
 			<div className={styles['dropdown-links']}>
 				<a className={styles['dropdown-link']} onClick={onToken}>Token</a>
-				<Link className={styles['dropdown-link']} to={'/'} onClick={onClose}>Mint</Link>
+				<Link className={styles['dropdown-link']} to={'/mint'} onClick={onClose}>Mint</Link>
 				<a
 					className={styles['dropdown-link']}
 					href={'https://docs.cryptoflats.io/'}

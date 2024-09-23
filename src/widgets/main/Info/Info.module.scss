@@ -44,6 +44,18 @@
     }
 }
 
+@keyframes mint-animation-4 {
+    0% {
+        transform: rotate(80deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(80deg);
+    }
+}
+
 .root {
     cursor: pointer;
     display: flex;
@@ -229,7 +241,7 @@
         transform: rotate(-44deg);
 
         & img {
-            animation-name: mint-animation-1;
+            animation-name: mint-animation-4;
         }
 
         @include media-tablet() {

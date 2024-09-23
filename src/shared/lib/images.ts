@@ -129,5 +129,28 @@ export const images = {
             '3': '/images/main/team/3-min',
             '4': '/images/main/team/4-min',
         }
+    },
+    mint: {
+        slider: {
+            gen0: {
+                '0': '/images/mint/slider/gen0/0',
+                '1': '/images/mint/slider/gen0/1',
+                '2': '/images/mint/slider/gen0/2',
+            },
+            gen1: {
+                '0': '/images/mint/slider/gen1/0',
+                '1': '/images/mint/slider/gen1/1',
+                '2': '/images/mint/slider/gen1/2',
+            },
+            radials: {
+                '0': '/images/mint/slider/radials/0',
+                '1': '/images/mint/slider/radials/1',
+                '2': '/images/mint/slider/radials/2',
+                '3': '/images/mint/slider/radials/3',
+                '4': '/images/mint/slider/radials/4',
+                '5': '/images/mint/slider/radials/5',
+            },
+            placeholder: '/images/mint/slider/placeholder'
+        }
     }
 }

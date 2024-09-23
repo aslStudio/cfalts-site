@@ -29,7 +29,6 @@ const PromoCard = () => (
 			muted={true}
 			poster={`${images.main.info.game.preview}.png`}
 			preload='none'
-			controls={false}
 		>
 			<source src={'/videos/promo.mp4'} type={'video/mp4'} />
 		</video>

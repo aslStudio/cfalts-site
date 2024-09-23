@@ -43,6 +43,10 @@
     width: 210px;
     height: 42px;
 
+    & picture {
+        width: 100%;
+    }
+
     & img {
         object-fit: contain!important;
     }
@@ -128,7 +132,10 @@
     border: none;
     padding: 0;
 
-    & img {
+    & picture {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
     }
 

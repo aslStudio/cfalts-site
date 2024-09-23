@@ -3,9 +3,10 @@ import React, { useEffect, useMemo, useState } from "react"
 import { Modal } from "@/shared/ui/Modal"
 import { WebpImage } from "@/shared/ui/WebpImage"
 import { images } from "@/shared/lib/images"
+import { Button } from "@/shared/ui/Button"
+import { IconBase } from "@/shared/ui/IconBase"
 
 import styles from './TokenSaleModal.module.scss'
-import { Button } from "@/shared/ui/Button"
 
 export type TokenSaleModalProps = {
     isOpen: boolean
@@ -36,7 +37,13 @@ export const TokenSaleModal = React.memo<TokenSaleModalProps>(({
     return (
         <Modal 
             isOpen={isOpen} 
+            isUpperHeader={true}
             cardStyles={styles.card}
+            RootChildren={(
+                <button className={styles.close} onClick={onClose}>
+                    <IconBase type={'icon-close-surface'}/>
+                </button>
+            )}
             onClose={onClose}
         >
             <WebpImage 
