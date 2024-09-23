@@ -81,9 +81,9 @@ const Cell = React.memo<CellProps>(({
 
     const title = useMemo(() => {
         switch (type) {
-            case "wallet": return 'Metamask'
+            case "wallet": return 'Wallet connect'
             case "coinbase": return 'Coinbase wallet'
-            case "metamask": return 'Wallet connect'
+            case "metamask": return 'Metamask'
         }
     }, [type])
 

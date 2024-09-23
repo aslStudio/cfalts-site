@@ -5,6 +5,7 @@ import { images } from '@/shared/lib/images';
 import { WebpImage } from '@/shared/ui/WebpImage';
 
 import styles from './Info.module.scss'
+import {useNavigate, useNavigation} from "react-router-dom";
 
 export const Info = () => {
 	const containerClasses = useMemo(() => [
@@ -46,6 +47,8 @@ const PromoCard = () => (
 )
 
 const MintCard = () => {
+	const navigate = useNavigate()
+
 	return (
 		<article className={styles['mint-card']}>
 			{Array(6).fill(1).map((_, key) => (
@@ -62,7 +65,12 @@ const MintCard = () => {
 					<br />
 					OUR NFT
 				</p>
-				<Button className={styles.button} onClick={() => {}}>MINT PAGE</Button>
+				<Button
+					className={styles.button}
+					onClick={() => navigate('/mint')}
+				>
+					MINT PAGE
+				</Button>
 			</div>
 		</article>
 	)

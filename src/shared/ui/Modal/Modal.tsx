@@ -41,23 +41,25 @@ export const Modal = React.memo<ModalProps>(({
             }, 50)
         } else {
             setIsShowed(false)
-            // timeout = setTimeout(() => {
-            //     setIsInDOM(false)
-            //     clearTimeout(timeout)
-            // }, 1000)
+            timeout = setTimeout(() => {
+                setIsInDOM(false)
+                clearTimeout(timeout)
+            }, 350)
         }
     }, [isOpen])
 
-    return createPortal(
-        <div className={classes}>
-            <div className={styles.overlay} onClick={onClose} />
-            {RootChildren}
-            <article className={`${styles.card} ${cardStyles}`}>
-                {children}
-            </article>
-        </div>,
-        document.querySelector('#root')!
-    )
+    if (isInDOM) {
+        return createPortal(
+            <div className={classes}>
+                <div className={`${styles.overlay} ${isShowed ? styles['is-open'] : ''}`} onClick={onClose} />
+                {RootChildren}
+                <article className={`${styles.card} ${isShowed ? styles['is-open'] : ''} ${cardStyles}`}>
+                    {children}
+                </article>
+            </div>,
+            document.querySelector('#root')!
+        )
+    }
 
-    // return null
+    return null
 })

@@ -505,6 +505,10 @@
         color: inherit;
         outline: none;
 
+        &:disabled {
+            opacity: 1;
+        }
+
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
             -webkit-appearance: none;

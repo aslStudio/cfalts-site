@@ -202,17 +202,17 @@
             @keyframes #{$framesName} {
                 from {
                     transform: translate3d(
-                                    #{random(420) + px},
-                                    #{$startPositionY + px},
-                                    0
+                        #{random(420) + px},
+                        #{$startPositionY + px},
+                        0
                     );
                 }
 
                 to {
                     transform: translate3d(
-                                    #{random(420) + px},
-                                    #{- $startPositionY - random(1000) + px},
-                                    0
+                        #{random(420) + px},
+                        #{- $startPositionY - random(1000) + px},
+                        0
                     );
                 }
             }
@@ -228,7 +228,7 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 128px;
+    top: 100px;
     right: 27px;
     background: none;
     border: none;

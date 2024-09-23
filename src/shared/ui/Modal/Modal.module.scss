@@ -9,13 +9,11 @@
     align-items: center;
     z-index: 9;
     pointer-events: none;
-    width: 0;
-    height: 0;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
 
     &.is-open {
-        width: 100vw;
-        height: 100vh;
         pointer-events: auto;
 
         @include media-tablet() {
@@ -39,13 +37,16 @@
     background-color: #171E27;
     backdrop-filter: blur(6px);
 
-    opacity: 0;
-
     transition: 0.3s ease;
     transition-property: opacity;
 
+    opacity: 0;
+
     &.is-open {
         opacity: 0.9;
+
+        transition: 0.3s ease;
+        transition-property: opacity;
     }
 }
 

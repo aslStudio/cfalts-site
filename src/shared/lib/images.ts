@@ -132,7 +132,9 @@ export const images = {
     },
     mint: {
         info: {
-            preview: '/images/mint/info/preview'
+            preview: '/images/mint/info/preview',
+            previewTablet: '/images/mint/info/preview-tablet',
+            previewMobile: '/images/mint/info/preview-mobile',
         },
         slider: {
             gen0: {

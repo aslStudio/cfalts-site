@@ -153,6 +153,7 @@ const Background = React.memo<BackgroundProps>(({
 				src={images.main.slider.backgrounds.diamond}
 				alt={'background'}
 			/>
+			<div className={styles.overlay}/>
 		</div>
 	)
 })
@@ -227,7 +228,6 @@ const Slide = React.memo<SliderProps>(({
 
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.overlay} />
 			<div className={styles.content}>
 				<WebpImage
 					className={roomClasses}
