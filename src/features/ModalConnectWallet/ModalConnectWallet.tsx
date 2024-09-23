@@ -51,10 +51,11 @@ export const ModalConnectWallet = React.memo<ModalConnectWalletProps>(({
                 <Cell type={'coinbase'} onClick={() => onClose(false)}/>
                 <Cell type={'wallet'} onClick={() => onClose(false)}/>
             </div>
-            <WebpImage
+            <img
                 className={styles.boy}
-                src={images.connectWallet.boy}
+                src={`${images.connectWallet.boy}.png`}
                 alt={'boy'}
+                loading={'lazy'}
             />
         </Modal>
     )
