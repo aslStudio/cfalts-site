@@ -8,8 +8,7 @@ export const Info = () => {
             <video
                 className={`${styles.video} lazy`}
                 autoPlay={true}
-                // @ts-ignore
-                playsinline={true}
+                playsInline={true}
                 loop={true}
                 muted={true}
                 poster={`${images.mint.info.preview}.png`}
