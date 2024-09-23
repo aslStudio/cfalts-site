@@ -39,7 +39,7 @@ const PromoCard = () => (
 				<IconBase type={'icon-rocket'} />
 			</p>
 			<Button className={styles.button} onClick={() => {
-			}}>JOIN WAITLIST</Button>
+			}}>PLAY AND EARN</Button>
 		</div>
 	</article>
 )

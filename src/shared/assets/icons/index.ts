@@ -4,6 +4,8 @@ import IconConnectWallet from './icon-connect-wallet.svg'
 import IconMetamask from './icon-metamask.svg'
 import IconClose from './icon-close.png'
 import IconCloseSurface from './icon-close-surface.png'
+import IconChevronBottom from './icon-chevron-bottom.png'
+import IconOpenSea from './icon-opensea.png'
 
 export const icons = {
 	'icon-rocket': IconRocket,
@@ -12,4 +14,6 @@ export const icons = {
 	'icon-metamask': IconMetamask,
 	'icon-close': IconClose,
 	'icon-close-surface': IconCloseSurface,
+	'icon-chevron-bottom': IconChevronBottom,
+	'icon-open-sea': IconOpenSea,
 }

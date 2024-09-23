@@ -31,6 +31,10 @@
     object-fit: cover;
     z-index: -2;
 
+    & img {
+        object-fit: none;
+    }
+
     @include media-tablet() {
         border-radius: 16px;
         overflow: hidden;

@@ -1,0 +1,34 @@
+@import "src/app/styles/mixins.scss";
+
+.root {
+    position: relative;
+}
+
+.large {
+    display: none;
+
+    @include media-tablet() {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 2525px;
+        opacity: 0.35;
+        z-index: -1;
+    }
+}
+
+.small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1700px;
+    opacity: 0.35;
+    z-index: -1;
+
+    @include media-tablet() {
+        display: block;
+    }
+}

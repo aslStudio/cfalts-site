@@ -151,6 +151,14 @@ export const images = {
                 '5': '/images/mint/slider/radials/5',
             },
             placeholder: '/images/mint/slider/placeholder'
+        },
+        gradient1: {
+            large: '/images/mint/gradient1/large',
+            mobile: '/images/mint/gradient1/mobile',
+        },
+        gradient2: {
+            large: '/images/mint/gradient2/large',
+            small: '/images/mint/gradient2/small'
         }
     }
 }

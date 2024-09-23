@@ -3,8 +3,9 @@ import React, { useMemo } from 'react';
 import styles from './Button.module.scss'
 
 export type ButtonProps = React.PropsWithChildren<{
-	view?: 'brand' | 'purple' | 'pink'
+	view?: 'brand' | 'purple' | 'pink' | 'disabled'
 	size?: 'l' | 'm' | 's'
+	isShadow?: boolean
 	className?: string
 	onClick: () => void
 }>
