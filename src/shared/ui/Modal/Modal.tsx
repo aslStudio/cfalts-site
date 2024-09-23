@@ -30,6 +30,8 @@ export const Modal = React.memo<ModalProps>(({
         isUpperHeader ? styles['is-upper-header'] : ''
     ].join(' '), [isShowed, isUpperHeader])
 
+
+
     useEffect(() => {
         if (isOpen) {
             setIsInDOM(true)
@@ -39,25 +41,23 @@ export const Modal = React.memo<ModalProps>(({
             }, 50)
         } else {
             setIsShowed(false)
-            timeout = setTimeout(() => {
-                setIsInDOM(false)
-                clearTimeout(timeout)
-            }, 350)
+            // timeout = setTimeout(() => {
+            //     setIsInDOM(false)
+            //     clearTimeout(timeout)
+            // }, 1000)
         }
     }, [isOpen])
 
-    if (isInDOM) {
-        return createPortal(
-            <div className={classes}>
-                <div className={styles.overlay} onClick={onClose} />
-                {RootChildren}
-                <article className={`${styles.card} ${cardStyles}`}>
-                    {children}
-                </article>
-            </div>,
-            document.querySelector('#root')!
-        )
-    }
+    return createPortal(
+        <div className={classes}>
+            <div className={styles.overlay} onClick={onClose} />
+            {RootChildren}
+            <article className={`${styles.card} ${cardStyles}`}>
+                {children}
+            </article>
+        </div>,
+        document.querySelector('#root')!
+    )
 
-    return null
+    // return null
 })

@@ -131,6 +131,9 @@ export const images = {
         }
     },
     mint: {
+        info: {
+            preview: '/images/mint/info/preview'
+        },
         slider: {
             gen0: {
                 '0': '/images/mint/slider/gen0/0',

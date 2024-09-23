@@ -25,6 +25,8 @@ const PromoCard = () => (
 		<video
 			className={`${styles.video} lazy`}
 			autoPlay={true}
+			// @ts-ignore
+			playsinline={true}
 			loop={true}
 			muted={true}
 			poster={`${images.main.info.game.preview}.png`}

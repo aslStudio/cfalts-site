@@ -18,15 +18,6 @@
         height: 100vh;
         pointer-events: auto;
 
-        & .overlay {
-            opacity: 0.9;
-        }
-
-        & .card {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
         @include media-tablet() {
             z-index: 20;
         }
@@ -52,6 +43,10 @@
 
     transition: 0.3s ease;
     transition-property: opacity;
+
+    &.is-open {
+        opacity: 0.9;
+    }
 }
 
 .card {
@@ -60,4 +55,9 @@
 
     transition: 0.3s ease;
     transition-property: transform, opacity;
+
+    &.is-open {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

@@ -125,8 +125,12 @@
     }
 
     & .button {
-        width: 320px;
+        width: 250px;
         margin-top: 50px;
+
+        @include media-tablet() {
+            width: 320px;
+        }
     }
 
     @include media-tablet() {
@@ -300,10 +304,11 @@
     }
 
     & .button {
-        width: 320px;
+        width: 250px;
         margin-top: 33px;
 
         @include media-tablet() {
+            width: 320px;
             margin-top: 52px;
         }
     }
