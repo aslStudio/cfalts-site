@@ -30,7 +30,7 @@ export const Slider = () => {
     const [ activeId, setActiveId ] = useState(Gen.First)
 
     return (
-        <section>
+        <section className={styles.root}>
             <Tabs activeId={activeId} onSelect={setActiveId} />
             <Dots activeId={activeId} onSelect={setActiveId} />
             <Cards activeId={activeId} onSelect={setActiveId} />

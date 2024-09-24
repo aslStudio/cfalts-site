@@ -22,6 +22,10 @@
     }
 }
 
+.root {
+    margin-top: 30px;
+}
+
 .tabs {
     padding-left: 7.69%;
     padding-right: 7.69%;
@@ -563,7 +567,7 @@
         box-sizing: border-box;
         text-align: center;
         width: 52px;
-        height: 28px;
+        height: 30px;
         background: none;
         margin-left: 10px;
         border-radius: 6px;
