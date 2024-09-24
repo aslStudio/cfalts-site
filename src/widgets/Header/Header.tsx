@@ -16,9 +16,18 @@ export const Header = () => {
 	const [isConnectWallet, setIsConnectWallet] = useState(false)
 	const [isTokenSale, setIsTokenSale] = useState(false)
 
+	const [ isBackground, setIsBackground ] = useState(false)
+
+	function onOpenWallet() {
+		if (window.innerWidth < 769) {
+			setIsBackground(true)
+		}
+		setIsConnectWallet(true)
+	}
+
 	return (
 		<>
-			<header className={styles.root}>
+			<header className={`${styles.root} ${isBackground ? styles['is-background'] : ''}`}>
 				<div className={`${styles.container} container`}>
 					<Link
 						className={styles.logo}  
@@ -53,7 +62,7 @@ export const Header = () => {
 								<WebpImage src={images.main.header.discord} alt={'discord'}/>
 							</a>
 						</div>
-						<button className={styles.wallet} onClick={() => setIsConnectWallet(true)}>
+						<button className={styles.wallet} onClick={onOpenWallet}>
 							<WebpImage src={images.main.header.wallet} alt={'wallet'}/>
 						</button>
 						<Burger
@@ -73,7 +82,10 @@ export const Header = () => {
 				/>
 				<ModalConnectWallet
 					isOpen={isConnectWallet}
-					onClose={() => setIsConnectWallet(false)}
+					onClose={() => {
+						setIsBackground(false)
+						setIsConnectWallet(false)
+					}}
 				/>
 				<TokenSaleModal 
 					isOpen={isTokenSale}

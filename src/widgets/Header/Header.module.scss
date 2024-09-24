@@ -8,7 +8,15 @@
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0);
     z-index: 11;
+
+    transition: 0.3s ease;
+    transition-property: background-color;
+
+    &.is-background {
+        background-color: #171E27;
+    }
 
     @include media-tablet() {
         padding-top: 40px;
