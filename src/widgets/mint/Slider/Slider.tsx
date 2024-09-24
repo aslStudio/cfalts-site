@@ -221,6 +221,12 @@ const Cards = React.memo<CardsProps>(({
         return 1
     }, [])
 
+    const onClick = useCallback((id: Gen) => {
+        if (id !== activeId) {
+            swiper?.slideToLoop(id)
+        }
+    }, [activeId, swiper])
+
     useEffect(() => {
         if (
             swiper?.realIndex !== activeId
@@ -234,12 +240,17 @@ const Cards = React.memo<CardsProps>(({
             loop={true}
             slidesPerView={slidesPerView}
             spaceBetween={10}
+            speed={300}
             centeredSlides={true}
             onSwiper={setSwiper}
             onSlideChange={(e: SwiperClass) => onSelect(e.realIndex)}
         >
             {cardsData.map(item => (
-                <SwiperSlide className={styles['card-slider']}>
+                <SwiperSlide
+                    key={item.id}
+                    className={styles['card-slider']}
+                    onClick={() => onClick(item.id)}
+                >
                     <Card {...item} isActive={item.id === activeId} />
                 </SwiperSlide>
             ))}
