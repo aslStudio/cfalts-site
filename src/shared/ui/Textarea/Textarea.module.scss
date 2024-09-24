@@ -5,8 +5,7 @@
     padding: 19px 20px;
     box-sizing: border-box;
     border-radius: 10px;
-    background: #212D3E;
-    opacity: 0.5;
+    background: rgba(33, 45, 62, 0.5);
     font-family: $mainFontFamily;
 
     border: none;
@@ -15,8 +14,12 @@
     font-size: 16px;
     line-height: 22px;
     font-weight: 800;
-    color: #76869A;
+    color: #FFFFFF;
     resize: none;
+
+    &::placeholder {
+        color: #FFFFFF;
+    }
 
     @include media-tablet() {
         font-size: 18px;
