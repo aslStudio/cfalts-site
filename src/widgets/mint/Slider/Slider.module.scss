@@ -460,12 +460,16 @@
 }
 
 .card-article-boy {
-    width: 130px;
+    width: 83px;
     margin: 0 auto;
-
-    margin-bottom: -12px;
+    margin-bottom: -10px;
     position: relative;
     z-index: 2;
+
+    @include media-tablet() {
+        width: 130px;
+        margin-bottom: -13px;
+    }
 }
 
 .card-article-nfts {
