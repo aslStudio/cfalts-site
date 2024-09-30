@@ -1,9 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react"
+import React, {useCallback, useEffect, useMemo, useState} from "react"
 import { Swiper, SwiperClass, SwiperSlide } from "swiper/react"
 
 import styles from './Slider.module.scss'
 import { WebpImage } from "@/shared/ui/WebpImage"
 import { images } from "@/shared/lib/images"
+import {IconBase} from "@/shared/ui/IconBase";
+import {useDeviceSize} from "@/shared/lib/hooks/useDeviceSize";
+import {Button} from "@/shared/ui/Button";
 
 enum Gen {
     First,
@@ -26,14 +29,12 @@ const GenArray = [
 export const Slider = () => {
     const [ activeId, setActiveId ] = useState(Gen.First)
 
-    useEffect(() => {
-        console.log(activeId)
-    }, [activeId])
-
     return (
-        <section>
+        <section className={styles.root}>
             <Tabs activeId={activeId} onSelect={setActiveId} />
+            <Dots activeId={activeId} onSelect={setActiveId} />
             <Cards activeId={activeId} onSelect={setActiveId} />
+            <OpenseaLink />
         </section>
     )
 }
@@ -105,6 +106,28 @@ const Tab = React.memo<TabProps>(({
         >
             {`GEN#${id}`}
         </button>
+    )
+})
+
+type DotsProps = {
+    activeId: Gen,
+    onSelect: (v: Gen) => void
+}
+
+const Dots = React.memo<DotsProps>(({
+    activeId,
+    onSelect,
+}) => {
+    return (
+        <div className={styles.dots}>
+            {GenArray.map(item => (
+                <div
+                    key={item}
+                    className={`${styles.dot} ${item === activeId ? styles['is-active'] : ''}`}
+                    onClick={() => onSelect(item)}
+                />
+            ))}
+        </div>
     )
 })
 
@@ -198,6 +221,12 @@ const Cards = React.memo<CardsProps>(({
         return 1
     }, [])
 
+    const onClick = useCallback((id: Gen) => {
+        if (id !== activeId) {
+            swiper?.slideToLoop(id)
+        }
+    }, [activeId, swiper])
+
     useEffect(() => {
         if (
             swiper?.realIndex !== activeId
@@ -211,12 +240,17 @@ const Cards = React.memo<CardsProps>(({
             loop={true}
             slidesPerView={slidesPerView}
             spaceBetween={10}
+            speed={300}
             centeredSlides={true}
             onSwiper={setSwiper}
             onSlideChange={(e: SwiperClass) => onSelect(e.realIndex)}
         >
             {cardsData.map(item => (
-                <SwiperSlide className={styles['card-slider']}>
+                <SwiperSlide
+                    key={item.id}
+                    className={styles['card-slider']}
+                    onClick={() => onClick(item.id)}
+                >
                     <Card {...item} isActive={item.id === activeId} />
                 </SwiperSlide>
             ))}
@@ -246,6 +280,11 @@ const Card = React.memo<CardProps>(({
     date,
     isActive
 }) => {
+    const [quantity, setQuantity] = useState(price ? 1 : 'N/A')
+    const [currency, setCurrency] = useState(price ? 1 : null)
+
+    const { notMobile, mobile } = useDeviceSize()
+
     const classes = useMemo(() => [
         styles.card,
         styles[`view-${id}`],
@@ -287,20 +326,42 @@ const Card = React.memo<CardProps>(({
                         alt="decoration"
                     />
                 </div>
-                {window.innerWidth >= 769 && (
+                {notMobile && (
                     <p className={styles['card-article-description']}>{description}</p>
                 )}
-                <div className={styles.quantity}>
-                    <p>Set quantity</p>
-                    <input type="number" value={1} />
+                <div className={styles['form-wrapper']}>
+                    <div className={styles.quantity}>
+                        <p>Set quantity</p>
+                        <input
+                            type={price ? "number" : "text"}
+                            value={quantity}
+                            disabled={!price}
+                            onChange={e => setQuantity(e.target.value)}
+                        />
+                    </div>
+                    <div className={styles.currency}>
+                        <p>Set currency</p>
+                        {mobile ? (
+                            <MobileCurrencyTabs value={currency} onChange={setCurrency}/>
+                        ) : (
+                            <CurrencyTabs
+                                value={currency}
+                                onChange={price ? setCurrency : undefined}
+                            />
+                        )}
+                    </div>
                 </div>
-                <div>
-                    <p>Set currency</p>
-                    <CurrencyTabs />
-                </div>
+                <Button
+                    className={styles.button}
+                    size={'m'}
+                    view={price ? 'pink' : 'disabled'}
+                    onClick={() => {}}
+                >
+                    MINT GEN#{id}
+                </Button>
             </article>
-            {window.innerWidth < 769 && (
-                <p 
+            {mobile && (
+                <p
                     className={`${styles['card-article-description']} container`}
                 >
                     {description}
@@ -310,14 +371,88 @@ const Card = React.memo<CardProps>(({
     )
 })
 
-const CurrencyTabs = React.memo(() => {
-    const [active, setIsActive] = useState(0)
+type CurrencyTabsProps = {
+    value: number | null
+    onChange?: (v: number) => void
+}
 
+const CurrencyTabs = React.memo<CurrencyTabsProps>(({
+    value,
+    onChange
+}) => {
     return (
         <div className={styles['currency-tabs']}>
-            <button className={`${active === 0 ? styles['is-active'] : ''}`}>ETH</button>
-            <button className={`${active === 1 ? styles['is-active'] : ''}`}>USDT</button>
-            <button className={`${active === 2 ? styles['is-active'] : ''}`}>CFLAT</button>
+            <button
+                className={`${value === 1 ? styles['is-active'] : ''}`}
+                onClick={() => onChange?.(1)}
+            >
+                ETH
+            </button>
+            <button
+                className={`${value === 2 ? styles['is-active'] : ''}`}
+                onClick={() => onChange?.(2)}
+            >
+                USDT
+            </button>
+            <button
+                className={`${value === 3 ? styles['is-active'] : ''}`}
+                onClick={() => onChange?.(3)}
+            >
+                CFLAT
+            </button>
         </div>
     )
 })
+
+const MobileCurrencyTabs = React.memo<CurrencyTabsProps>(({
+    value,
+    onChange
+}) => {
+    const textByValue = useMemo(() => {
+        switch (value) {
+            case 1:
+                return 'ETH';
+            case 2:
+                return 'USDT';
+            case 3:
+                return 'CFLAT';
+            default:
+                return 'ETH'
+        }
+    }, [value])
+
+    const onClick = useCallback(() => {
+        if (value) {
+            if (value < 3) {
+                onChange?.(value + 1)
+                return
+            }
+
+            onChange?.(1)
+        }
+    }, [value, onChange])
+
+    return (
+        <div className={styles['mobile-currency-tabs']}>
+            <button
+                className={value !== null ? styles['is-active'] : ''}
+                onClick={onClick}
+            >
+                {textByValue}
+            </button>
+            <IconBase
+                type={'icon-chevron-bottom'}
+                className={styles['mobile-currency-tabs-icon']}
+            />
+        </div>
+    )
+})
+
+const OpenseaLink = React.memo(() => (
+    <div className={styles.opensea}>
+        <p>Link to Opensea collection:</p>
+        <a href={'http://opensea.io/'} target={'_blank'} rel={'noreferrer noopener'}>
+            <IconBase type={'icon-open-sea'} />
+        </a>
+    </div>
+))

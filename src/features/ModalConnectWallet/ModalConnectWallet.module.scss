@@ -9,6 +9,8 @@
     padding-right: 27px;
     box-sizing: border-box;
 
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,6 +32,10 @@
     height: 100%;
     object-fit: cover;
     z-index: -2;
+
+    & img {
+        object-fit: none;
+    }
 
     @include media-tablet() {
         border-radius: 16px;
@@ -98,8 +104,8 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 25vh;
-    margin-bottom: -1.5vh;
+    height: 200px;
+    margin-bottom: -10px;
 
     @include media-tablet() {
         width: 154px;
@@ -198,17 +204,17 @@
             @keyframes #{$framesName} {
                 from {
                     transform: translate3d(
-                                    #{random(420) + px},
-                                    #{$startPositionY + px},
-                                    0
+                        #{random(420) + px},
+                        #{$startPositionY + px},
+                        0
                     );
                 }
 
                 to {
                     transform: translate3d(
-                                    #{random(420) + px},
-                                    #{- $startPositionY - random(1000) + px},
-                                    0
+                        #{random(420) + px},
+                        #{- $startPositionY - random(1000) + px},
+                        0
                     );
                 }
             }
@@ -224,8 +230,8 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 128px;
-    right: 27px;
+    top: 18%;
+    right: 7.69%;
     background: none;
     border: none;
     outline: none;
@@ -239,5 +245,6 @@
 
     @include media-tablet() {
         top: 24px;
+        right: 24px;
     }
 }

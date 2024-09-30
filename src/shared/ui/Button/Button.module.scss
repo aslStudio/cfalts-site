@@ -92,4 +92,16 @@
             opacity: 0.8;
         }
     }
+
+    &-disabled {
+        background: linear-gradient(360deg, #171e27 0%, #35455a 100%);
+        opacity: 0.5;
+        color: rgba(255, 255, 255, 0.25);
+
+        pointer-events: none;
+    }
+}
+
+.is-shadow {
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.15);
 }

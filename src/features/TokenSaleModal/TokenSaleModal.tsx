@@ -40,7 +40,10 @@ export const TokenSaleModal = React.memo<TokenSaleModalProps>(({
             isUpperHeader={true}
             cardStyles={styles.card}
             RootChildren={(
-                <button className={styles.close} onClick={onClose}>
+                <button
+                    className={`${styles.close} ${isOpen ? styles['is-open'] : ''}`}
+                    onClick={onClose}
+                >
                     <IconBase type={'icon-close-surface'}/>
                 </button>
             )}

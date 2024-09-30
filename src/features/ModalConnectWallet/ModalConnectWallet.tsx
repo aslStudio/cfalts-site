@@ -51,10 +51,11 @@ export const ModalConnectWallet = React.memo<ModalConnectWalletProps>(({
                 <Cell type={'coinbase'} onClick={() => onClose(false)}/>
                 <Cell type={'wallet'} onClick={() => onClose(false)}/>
             </div>
-            <WebpImage
+            <img
                 className={styles.boy}
-                src={images.connectWallet.boy}
+                src={`${images.connectWallet.boy}.png`}
                 alt={'boy'}
+                loading={'lazy'}
             />
         </Modal>
     )
@@ -81,9 +82,9 @@ const Cell = React.memo<CellProps>(({
 
     const title = useMemo(() => {
         switch (type) {
-            case "wallet": return 'Metamask'
+            case "wallet": return 'Wallet connect'
             case "coinbase": return 'Coinbase wallet'
-            case "metamask": return 'Wallet connect'
+            case "metamask": return 'Metamask'
         }
     }, [type])
 

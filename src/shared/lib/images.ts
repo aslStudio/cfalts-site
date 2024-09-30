@@ -131,6 +131,11 @@ export const images = {
         }
     },
     mint: {
+        info: {
+            preview: '/images/mint/info/preview',
+            previewTablet: '/images/mint/info/preview-tablet',
+            previewMobile: '/images/mint/info/preview-mobile',
+        },
         slider: {
             gen0: {
                 '0': '/images/mint/slider/gen0/0',
@@ -151,6 +156,14 @@ export const images = {
                 '5': '/images/mint/slider/radials/5',
             },
             placeholder: '/images/mint/slider/placeholder'
+        },
+        gradient1: {
+            large: '/images/mint/gradient1/large',
+            mobile: '/images/mint/gradient1/mobile',
+        },
+        gradient2: {
+            large: '/images/mint/gradient2/large',
+            small: '/images/mint/gradient2/small'
         }
     }
 }

@@ -1,0 +1,1 @@
+export { GradientSecond } from './GradientSecond'
