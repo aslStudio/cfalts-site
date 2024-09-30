@@ -40,8 +40,12 @@ const PromoCard = () => (
 				is released
 				<IconBase type={'icon-rocket'} />
 			</p>
-			<Button className={styles.button} onClick={() => {
-			}}>PLAY AND EARN</Button>
+			<Button 
+				className={styles.button}
+				href='https://t.me/Cflatsbot'
+			>
+				PLAY AND EARN
+			</Button>
 		</div>
 	</article>
 )

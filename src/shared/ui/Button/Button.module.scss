@@ -1,6 +1,9 @@
 @import "src/app/styles/index.scss";
 
 .root {
+    display: block;
+    text-align: center;
+    text-decoration: none;
     border: none;
     outline: none;
     font-family: $mainFontFamily;

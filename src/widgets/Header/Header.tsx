@@ -10,8 +10,14 @@ import { images } from '@/shared/lib/images';
 
 import { Burger } from './ui'
 import styles from './Header.module.scss'
+import { toast } from 'react-toastify';
+import { useUnavailbleToken } from '@/shared/lib/hooks/useUnavailableToken';
+
+const IS_TOKEN_AVAILABLE = false
 
 export const Header = () => {
+	const { trigger } = useUnavailbleToken()
+
 	const [isOpen, setIsOpen] = useState(false)
 	const [isConnectWallet, setIsConnectWallet] = useState(false)
 	const [isTokenSale, setIsTokenSale] = useState(false)
@@ -40,7 +46,7 @@ export const Header = () => {
 					</Link>
 					<div className={styles.info}>
 						<div className={styles.links}>
-							<a className={styles.link} onClick={() => setIsTokenSale(true)}>Token</a>
+							<a className={styles.link} onClick={trigger}>Token</a>
 							<Link className={styles.link} to={'/mint'}>Mint</Link>
 							<a
 								className={styles.link}
@@ -62,7 +68,7 @@ export const Header = () => {
 								<WebpImage src={images.main.header.discord} alt={'discord'}/>
 							</a>
 						</div>
-						<button className={styles.wallet} onClick={onOpenWallet}>
+						<button className={styles.wallet} onClick={trigger}>
 							<WebpImage src={images.main.header.wallet} alt={'wallet'}/>
 						</button>
 						<Burger
@@ -77,7 +83,8 @@ export const Header = () => {
 					onClose={() => setIsOpen(false)}
 					onToken={() => {
 						setIsOpen(false)
-						setIsTokenSale(true)
+						// setIsTokenSale(true)
+						trigger()
 					}}
 				/>
 				<ModalConnectWallet

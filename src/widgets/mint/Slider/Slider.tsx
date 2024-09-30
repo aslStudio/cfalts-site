@@ -27,14 +27,18 @@ const GenArray = [
 ]
 
 export const Slider = () => {
+    const { desktop } = useDeviceSize()
+
     const [ activeId, setActiveId ] = useState(Gen.First)
 
     return (
         <section className={styles.root}>
             <Tabs activeId={activeId} onSelect={setActiveId} />
-            <Dots activeId={activeId} onSelect={setActiveId} />
+            {!desktop && (
+                <Dots activeId={activeId} onSelect={setActiveId} />
+            )}
             <Cards activeId={activeId} onSelect={setActiveId} />
-            <OpenseaLink />
+            {/* <OpenseaLink /> */}
         </section>
     )
 }
@@ -139,7 +143,7 @@ type CardsProps = {
 const cardsData: Omit<CardProps, 'isActive'>[] = [
     {
         id: Gen.First,
-        price: '0.03 ETH',
+        date: '21/10/24',
         title: 'GEN#0 NFT PASS',
         alert: '-30% off with $CFLAT',
         nfts: [
@@ -151,7 +155,7 @@ const cardsData: Omit<CardProps, 'isActive'>[] = [
     },
     {
         id: Gen.Second,
-        date: '5/11/24',
+        date: '21/10/24',
         title: 'GEN#1 LIVING ROOMS',
         alert: '',
         nfts: [

@@ -27,10 +27,12 @@
 }
 
 .tabs {
+    margin-bottom: 24px;
     padding-left: 7.69%;
     padding-right: 7.69%;
 
     @include media-tablet() {
+        margin-bottom: 36px;
         padding: 0;
 
         & div {
@@ -42,6 +44,10 @@
                 margin: 0;
             }
         }
+    }
+
+    @include media-desktop() {
+        margin-bottom: 40px;
     }
 }
 
@@ -773,16 +779,13 @@
     justify-content: center;
     align-items: center;
 
-    margin-top: 24px;
     margin-bottom: 24px;
 
     @include media-tablet() {
-        margin-top: 36px;
         margin-bottom: 44px;
     }
 
     @include media-desktop() {
-        margin-top: 40px;
         margin-bottom: 40px;
     }
 }
