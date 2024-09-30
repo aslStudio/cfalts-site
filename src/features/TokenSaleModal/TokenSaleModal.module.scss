@@ -1,4 +1,4 @@
-@import "src/app/styles/mixins.scss";
+@import "src/app/styles/index.scss";
 
 .card {
     width: 100vw;
@@ -147,6 +147,7 @@
     border: none;
     outline: none;
     width: 70%;
+    font-family: $mainFontFamily!important;
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
