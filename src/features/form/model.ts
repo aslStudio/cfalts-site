@@ -40,7 +40,7 @@ sample({
 sample({
     clock: sendFormFx.doneData,
     filter: ({ error }) => !error,
-    target: onSuccess.trigger
+    target: [reset, onSuccess.trigger]
 })
 
 sample({
