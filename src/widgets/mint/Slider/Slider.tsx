@@ -143,9 +143,8 @@ type CardsProps = {
 const cardsData: Omit<CardProps, 'isActive'>[] = [
     {
         id: Gen.First,
-        date: '21/10/24',
         title: 'GEN#0 NFT PASS',
-        alert: '-30% off with $CFLAT',
+        alert: '',
         nfts: [
             images.mint.slider.gen0['0'],
             images.mint.slider.gen0['1'],
@@ -155,7 +154,6 @@ const cardsData: Omit<CardProps, 'isActive'>[] = [
     },
     {
         id: Gen.Second,
-        date: '21/10/24',
         title: 'GEN#1 LIVING ROOMS',
         alert: '',
         nfts: [
