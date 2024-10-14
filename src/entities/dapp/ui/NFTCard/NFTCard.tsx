@@ -69,7 +69,6 @@ export const NFTCard = React.memo<NFTCardProps>(({
                 {typeof id === 'number' && (
                     <button 
                         className={styles.button}
-                        onClick={onClick}
                     >
                         <img
                             src={`${images.dapp['card-bg']}.png`}
