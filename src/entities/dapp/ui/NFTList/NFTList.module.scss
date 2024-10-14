@@ -47,7 +47,7 @@
     }
 
     @include media-desktop() {
-        width: 965px;
+        width: calc(100% - 40px);
         margin-left: auto;
         margin-right: auto;
         min-height: 663px;
@@ -65,7 +65,7 @@
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 100%;
+    width: calc(100% - 30px);
     opacity: 0;
 
     transition: 0.3s ease;

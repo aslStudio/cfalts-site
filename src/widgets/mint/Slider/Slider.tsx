@@ -309,7 +309,7 @@ const Card = React.memo<CardProps>(({
             <p className={styles['card-title']}>{label}</p>
             <article className={styles['card-article']}>
                 <p className={styles['card-article-title']}>{title}</p>
-                <p className={styles['card-article-alert']}>{alert}</p>
+                {/*<p className={styles['card-article-alert']}>{alert}</p>*/}
                 <WebpImage
                     className={styles['card-article-boy']}
                     src={images.connectWallet.boy}

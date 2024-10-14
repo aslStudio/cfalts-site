@@ -33,7 +33,8 @@ export const NFTCard = React.memo<NFTCardProps>(({
         styles[`is-${getRarityText(rarity).replace('/', '').toLowerCase()}`],
         className ? className : '',
         isSelected && styles['is-selected'],
-    ].join(' '), [className, rarity, isSelected])
+        typeof id === 'number' ? styles['is-active'] : ''
+    ].join(' '), [id, className, rarity, isSelected])
 
     const rarityText = useMemo(() => {
         if (window.innerWidth < 769) {

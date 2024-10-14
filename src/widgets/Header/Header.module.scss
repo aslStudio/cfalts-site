@@ -52,7 +52,7 @@
 
     @media (min-width: 1920px) {
         &.is-wide {
-            max-width: 1800px!important;
+            max-width: unset!important;
         }
     }
 }

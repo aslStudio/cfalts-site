@@ -1,4 +1,4 @@
-import React, { useMemo } from "react"
+import React, {useEffect, useMemo, useRef, useState} from "react"
 
 import { images } from "@/shared/lib/images"
 
@@ -22,59 +22,27 @@ export const NFTList = React.memo<NFTListProps>(({
     gen,
     onSelect
 }) => {
+    const rootRef = useRef<HTMLDivElement | null>(null)
+    const [length, setLength] = useState(2)
+    const [width, setWidth] = useState('calc(50% - 10px)')
+
     const data = useMemo(() => {
-        if (window.innerWidth < 769) {
-            if (list.length % 2 !== 0) {
-                return [
-                    ...list,
-                    ...Array(2 - list.length % 2).fill(1).map(item => ({
-                        id: 'N/A',
-                        img: `${images.dapp.placeholder}.png`,
-                        rarity: undefined,
-                        gen,
-                    }))
-                ]
-            }
-
-            return list
-        }
-
-        if (window.innerWidth < 1200) {
-            if (list.length % 3 !== 0) {
-                return [
-                    ...list,
-                    ...Array(3 - list.length % 3).fill(1).map(item => ({
-                        id: 'N/A',
-                        img: `${images.dapp.placeholder}.png`,
-                        rarity: undefined,
-                        gen,
-                    }))
-                ]
-            }
-
-            return list
-        }
-
-        if (window.innerWidth < 1920) {
-            if (list.length % 4 !== 0) {
-                return [
-                    ...list,
-                    ...Array(4 - list.length % 4).fill(1).map(item => ({
-                        id: 'N/A',
-                        img: `${images.dapp.placeholder}.png`,
-                        rarity: undefined,
-                        gen,
-                    }))
-                ]
-            }
-
-            return list
-        }
-
-        if (list.length % 5 !== 0) {
+        if (list.length % length !== 0 && list.length > length) {
             return [
                 ...list,
-                ...Array(5 - list.length % 5).fill(1).map(item => ({
+                ...Array(length - list.length % length).fill(1).map(() => ({
+                    id: 'N/A',
+                    img: `${images.dapp.placeholder}.png`,
+                    rarity: undefined,
+                    gen,
+                }))
+            ]
+        }
+
+        if (list.length < length * 2) {
+            return [
+                ...list,
+                ...Array(length * 2 - list.length).fill(1).map(() => ({
                     id: 'N/A',
                     img: `${images.dapp.placeholder}.png`,
                     rarity: undefined,
@@ -84,51 +52,102 @@ export const NFTList = React.memo<NFTListProps>(({
         }
 
         return list
-    }, [list])
+    }, [list, length, gen])
 
-    const skeletonList = useMemo(() => {
-        if (window.innerWidth < 769) {
-            return 6
+    function resizeHandler() {
+        function getCardWidth() {
+            if (window.innerWidth < 769) {
+                return 170
+            }
+
+            if (window.innerWidth <= 1200) {
+                return 210
+            }
+
+            return 260
         }
 
-        if (window.innerWidth < 1200) {
-            return 6
+        function getSpaceSize() {
+            if (window.innerWidth < 769) {
+                return 10
+            }
+
+            if (window.innerWidth >= 769 && window.innerWidth < 1920) {
+                return 30
+            }
+
+            return 40
         }
 
-        if (window.innerWidth < 1920) {
-            return 8
-        }
+        if (rootRef.current) {
+            const parentWidth = rootRef.current!.getBoundingClientRect().width
+            const cardWidth = getCardWidth()
+            const spaceSize = getSpaceSize()
 
-        return 10
-    }, [])
+            const firstCount = Math.floor(parentWidth / cardWidth)
+            const firstSpacesWidth = parentWidth - firstCount * cardWidth
+
+            if (Math.floor(firstSpacesWidth / spaceSize) >= firstCount - 1) {
+                setLength(firstCount)
+                setWidth(`calc(${100 / firstCount}% - ${spaceSize}px)`)
+            } else {
+                setLength(firstCount - 1)
+                setWidth(`calc(${100 / (firstCount - 1)}% - ${spaceSize}px)`)
+            }
+        }
+    }
+
+    useEffect(() => {
+        resizeHandler()
+        window.addEventListener('resize', resizeHandler)
+
+        return () => {
+            window.removeEventListener('resize', resizeHandler)
+        }
+    }, []);
 
     return (
-        <div className={`${styles.root} ${isLoading ? styles['is-loading'] : styles['is-content']}`}>
+        <div
+            ref={rootRef}
+            className={`${styles.root} ${isLoading ? styles['is-loading'] : styles['is-content']}`}
+        >
             <div className={`${styles.list} ${styles.loader}`}>
-                {Array(skeletonList).fill(1).map(item => (
-                    <NFTCard 
-                        id={'N/A'}
-                        isSelected={false}
+                {Array(length).fill(1).map(item => (
+                    <div
                         className={styles.item}
-                        img={`${images.dapp.placeholder}.png`}
-                        gen={gen}
-                        onClick={() => {}}
-                    />
+                        style={{
+                            width,
+                        }}
+                    >
+                        <NFTCard
+                            id={'N/A'}
+                            isSelected={false}
+                            img={`${images.dapp.placeholder}.png`}
+                            gen={gen}
+                            onClick={() => {}}
+                        />
+                    </div>
                 ))}
             </div>
             <div className={`${styles.list} ${styles.content}`}>
                 {data.map(item => (
-                    <NFTCard 
-                        {...item}
+                    <div
                         className={styles.item}
-                        isSelected={selectedList.findIndex(s => s.id === item.id) !== -1}
-                        gen={gen}
-                        onClick={() => {
-                            if (typeof item.id !== 'string') {
-                                onSelect(item as NFT)
-                            }
+                        style={{
+                            width,
                         }}
-                    />
+                    >
+                        <NFTCard
+                            {...item}
+                            isSelected={selectedList.findIndex(s => s.id === item.id) !== -1}
+                            gen={gen}
+                            onClick={() => {
+                                if (typeof item.id !== 'string') {
+                                    onSelect(item as NFT)
+                                }
+                            }}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
