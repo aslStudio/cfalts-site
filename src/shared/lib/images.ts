@@ -47,6 +47,8 @@ export const images = {
             telegram: '/images/main/header/telegram',
             wallet: '/images/main/header/wallet',
             x: '/images/main/header/x',
+            'logo-dapp': '/images/main/header/logo-dapp',
+            avatar: '/images/main/header/avatar'
         },
         info: {
             game: {
@@ -165,5 +167,11 @@ export const images = {
             large: '/images/mint/gradient2/large',
             small: '/images/mint/gradient2/small'
         }
+    },
+    dapp: {
+        attach: '/images/dapp/attach',
+        'attach-bg': '/images/dapp/attach-bg',
+        placeholder: '/images/dapp/placeholder',
+        'card-bg': '/images/dapp/card-bg'
     }
 }

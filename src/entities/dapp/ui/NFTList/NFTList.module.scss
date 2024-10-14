@@ -1,0 +1,113 @@
+@import "/src/app/styles/index.scss";
+
+@keyframes skeleton {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.root {
+    position: relative;
+    width: 100%;
+    background-color: #1F2731;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    margin-top: 40px;
+
+    min-height: 788px;
+
+    &.is-loading {
+        .loader {
+            opacity: 1;
+
+            animation-name: skeleton;
+            animation-duration: 0.5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+    }
+
+    &.is-content {
+        .content {
+            opacity: 1;
+        }
+    }
+
+    @include media-tablet() {
+        width: calc(100% - 40px);
+        min-height: 692px;
+        margin-top: 50px;
+    }
+
+    @include media-desktop() {
+        width: 965px;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 663px;
+        border-radius: 32px;
+    }
+
+    @media (min-width: 1920px) {
+        width: 100%;
+        min-height: 803px;
+        margin-top: 40px;
+    }
+}
+
+.loader {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    opacity: 0;
+
+    transition: 0.3s ease;
+    transition-property: opacity;
+}
+
+.content {
+    opacity: 0;
+
+    transition: 0.3s ease;
+    transition-property: opacity;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: -10px;
+    margin-right: -10px;
+
+    @include media-tablet() {
+        margin-right: -30px;
+        margin-top: -30px;
+    }
+
+    @media (min-width: 1920px) {
+        margin-right: -40px;
+        margin-top: -40px;
+    }
+}
+
+.item {
+    margin-right: 10px;
+    margin-top: 10px;
+
+    @include media-tablet() {
+        margin-right: 30px;
+        margin-top: 30px;
+    }
+
+    @media (min-width: 1920px) {
+        margin-right: 40px;
+        margin-top: 40px;
+    }
+}

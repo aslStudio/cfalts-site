@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, {useState} from "react";
+import React, {useMemo, useState} from "react";
 import {createPortal} from "react-dom";
 
 import {ModalConnectWallet} from "@/features/ModalConnectWallet/ModalConnectWallet";
@@ -15,7 +15,13 @@ import { useUnavailbleToken } from '@/shared/lib/hooks/useUnavailableToken';
 
 const IS_TOKEN_AVAILABLE = false
 
-export const Header = () => {
+export type HeaderProps = {
+	type?: 'dapp' | 'main'
+}
+
+export const Header: React.FC<HeaderProps> = ({
+	type = 'main'
+}) => {
 	const { trigger } = useUnavailbleToken()
 
 	const [isOpen, setIsOpen] = useState(false)
@@ -23,6 +29,14 @@ export const Header = () => {
 	const [isTokenSale, setIsTokenSale] = useState(false)
 
 	const [ isBackground, setIsBackground ] = useState(false)
+
+	const logo = useMemo(() => {
+		if (type === 'dapp') {
+			return images.main.header['logo-dapp']
+		}
+
+		return images.main.header.logo
+	}, [type])
 
 	function onOpenWallet() {
 		if (window.innerWidth < 769) {
@@ -34,18 +48,19 @@ export const Header = () => {
 	return (
 		<>
 			<header className={`${styles.root} ${isBackground ? styles['is-background'] : ''}`}>
-				<div className={`${styles.container} container`}>
+				<div className={`${styles.container} container ${type === 'dapp' ? styles['is-wide'] : ''}`}>
 					<Link
 						className={styles.logo}  
 						to={'/'}
 					>
 						<WebpImage 
-							src={images.main.header.logo} 
+							src={logo} 
 							alt={'Logo'}
 						/>
 					</Link>
 					<div className={styles.info}>
 						<div className={styles.links}>
+							<Link className={styles.link} to={'/dapp'}>DApp</Link>
 							<a className={styles.link} onClick={trigger}>Token</a>
 							<Link className={styles.link} to={'/mint'}>Mint</Link>
 							<a
@@ -68,9 +83,18 @@ export const Header = () => {
 								<WebpImage src={images.main.header.discord} alt={'discord'}/>
 							</a>
 						</div>
-						<button className={styles.wallet} onClick={trigger}>
-							<WebpImage src={images.main.header.wallet} alt={'wallet'}/>
-						</button>
+						{type === 'main' && (
+							<button className={styles.wallet} onClick={trigger}>
+								<WebpImage src={images.main.header.wallet} alt={'wallet'}/>
+							</button>
+						)}
+						{type === 'dapp' && (
+							<WebpImage 
+								className={styles.avatar}
+								src={images.main.header.avatar}
+								alt='avatar'
+							/>
+						)}
 						<Burger
 							isOpen={isOpen}
 							className={styles.burger}
@@ -115,6 +139,7 @@ const Dropdown = React.memo<DropdownProps>(({ isOpen, onClose, onToken }) => {
 			<div className={styles['dropdown-links']}>
 				<a className={styles['dropdown-link']} onClick={onToken}>Token</a>
 				<Link className={styles['dropdown-link']} to={'/mint'} onClick={onClose}>Mint</Link>
+				<Link className={styles['dropdown-link']} to={'/dapp'} onClick={onClose}>DApp</Link>
 				<a
 					className={styles['dropdown-link']}
 					href={'https://docs.cryptoflats.io/'}

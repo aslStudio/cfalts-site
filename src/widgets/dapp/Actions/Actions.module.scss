@@ -1,0 +1,106 @@
+@import "/src/app/styles/index.scss";
+
+.root {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 360px;
+
+    margin-top: -10px;
+    margin-right: -10px;
+    margin-top: 40px;
+
+    & button {
+        outline: none;
+        border: none;
+        margin-top: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    @include media-tablet() {
+        width: 760px;
+
+        margin-right: -20px;
+        margin-top: 50px;
+    
+        & button {
+            margin-top: 20px;
+            margin-right: 20px;
+        }   
+    }
+
+    @media (min-width: 1920px) {
+        width: fit-content;
+
+        margin-top: 32px;
+        
+        & button {
+            margin-top: 0;
+            margin-right: 20px;
+        }   
+    }
+}
+
+.attach {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 170px;
+    height: 50px;
+    border-radius: 12px;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    color: #FFFFFF;
+
+    & p {
+        z-index: 2;
+    }
+}
+
+.attach-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 170px;
+    height: 50px;
+    border-radius: 12px;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    background-color: #252F3D;
+    color: #FFFFFF;
+
+    transition: 0.3s ease;
+    transition-property: background-color;
+
+    &:hover {
+        background-color: #181f2a;
+    }
+
+    & img {
+        width: 22px;
+    }
+}
+
+.button-icon {
+    margin-left: 15px;
+}

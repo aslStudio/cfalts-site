@@ -1,0 +1,100 @@
+@import "/src/app/styles/index.scss";
+
+.root {
+    display: none;
+
+    @media (min-width: 1920px) {
+        display: block;
+        width: 360px;
+        padding-left: 40px;
+        padding-top: 87px;
+        box-sizing: border-box;
+    }
+}
+
+.balance {
+    display: flex;
+    align-items: center;
+
+    & img {
+        width: 40px;
+    }
+
+    & p {
+        font-size: 24px;
+        font-weight: 800;
+
+        margin-left: 10px;
+
+        color: #fff;
+    }
+}
+
+.menu {
+    padding-left: 44px;
+
+    & button {
+        position: relative;
+        cursor: pointer;
+
+        display: block;
+
+        margin-top: 40px;
+
+        font-size: 20px;
+        font-weight: 600;
+        color: #DDDDDD;
+
+        outline: none;
+        border: none;
+        background: transparent;
+
+        transition: 0.3s ease;
+        transition-property: color;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #8CCFFF;
+
+            opacity: 0;
+
+            transition: 0.3s ease;
+            transition-property: opacity;
+        }
+
+        &:hover {
+            color: #8CCFFF;
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.attach {
+    position: relative;
+    display: block;
+
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;    
+}
+
+.attach-image {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

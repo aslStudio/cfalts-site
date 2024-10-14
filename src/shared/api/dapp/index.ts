@@ -1,0 +1,1 @@
+export { dappApi } from './rest.mock'

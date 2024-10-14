@@ -6,6 +6,9 @@ import IconClose from './icon-close.png'
 import IconCloseSurface from './icon-close-surface.png'
 import IconChevronBottom from './icon-chevron-bottom.png'
 import IconOpenSea from './icon-opensea.png'
+import IconCoin from './icon-coin.png'
+import IconFilter from './icon-filter.png'
+import IconEtherscan from './icon-etherscan.png'
 
 export const icons = {
 	'icon-rocket': IconRocket,
@@ -16,4 +19,7 @@ export const icons = {
 	'icon-close-surface': IconCloseSurface,
 	'icon-chevron-bottom': IconChevronBottom,
 	'icon-open-sea': IconOpenSea,
+	'icon-coin': IconCoin,
+	'icon-filter': IconFilter,
+	'icon-etherscan': IconEtherscan,
 }

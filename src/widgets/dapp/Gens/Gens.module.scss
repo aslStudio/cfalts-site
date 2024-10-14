@@ -1,0 +1,75 @@
+@import "/src/app/styles/index.scss";
+
+.root {
+    width: 100%;
+
+    padding-left: 49px;
+    padding-right: 49px;
+
+    box-sizing: border-box;
+
+    @include media-tablet() {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    @include media-desktop() {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: 1920px) {
+        margin-right: 0;
+        padding: 0;
+    }
+}
+
+.tab-slide {
+    width: 100px;
+
+    @include media-tablet() {
+        width: 120px;
+    }
+}
+
+.tab {
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+
+    background-color: rgba($color: #252F3D, $alpha: 0);
+
+    font-size: 20px;
+    font-family: $mainFontFamily;
+    padding: 0;
+
+    color: #4C5D73;
+
+    transition: 0.3s ease;
+    transition-property: color, background-color;
+
+    &.is-active {
+        background-color: #252F3D;
+        color: #FFFFFF;
+    }
+
+    &:hover {
+        color: #FFFFFF;
+    }
+
+    @include media-tablet() {
+        font-size: 24px;
+
+        width: 120px;
+        height: 50px;
+    }
+}
