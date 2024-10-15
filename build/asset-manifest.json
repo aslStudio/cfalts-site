@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.94febd8f.css",
-    "main.js": "/static/js/main.30f09e24.js",
+    "main.css": "/static/css/main.358530df.css",
+    "main.js": "/static/js/main.38e12ba7.js",
     "static/js/453.fefa75e0.chunk.js": "/static/js/453.fefa75e0.chunk.js",
     "static/media/Nunito-ExtraBold.ttf": "/static/media/Nunito-ExtraBold.42043534d98f10220d0a.ttf",
     "static/media/Nunito-Regular.ttf": "/static/media/Nunito-Regular.bb0b7104629b11c4f366.ttf",
@@ -19,12 +19,12 @@
     "static/media/btn-bg-pink.png": "/static/media/btn-bg-pink.80f1b6371370034495c3.png",
     "index.html": "/index.html",
     "static/media/icon-coinbasesvg.svg": "/static/media/icon-coinbasesvg.5f846768967fc1640020af9e625e84f1.svg",
-    "main.94febd8f.css.map": "/static/css/main.94febd8f.css.map",
-    "main.30f09e24.js.map": "/static/js/main.30f09e24.js.map",
+    "main.358530df.css.map": "/static/css/main.358530df.css.map",
+    "main.38e12ba7.js.map": "/static/js/main.38e12ba7.js.map",
     "453.fefa75e0.chunk.js.map": "/static/js/453.fefa75e0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.94febd8f.css",
-    "static/js/main.30f09e24.js"
+    "static/css/main.358530df.css",
+    "static/js/main.38e12ba7.js"
   ]
 }

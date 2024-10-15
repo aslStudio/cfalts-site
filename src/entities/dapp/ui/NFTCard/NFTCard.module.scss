@@ -6,13 +6,14 @@
     background-color: #171E27;
     border-radius: 16px;
     box-sizing: border-box;
-    border: 1px solid transparent;
 
     transition: 0.3s ease;
     transition-property: border-color;
 
     &.is-active {
         cursor: pointer;
+
+        border: 1px solid transparent;
 
         &:hover {
             .button {
@@ -31,12 +32,12 @@
             }
         }
     }
-}
 
-.is-selected {
-    border-color: #FFF;
-}
+    &.is-selected {
+        border: 1px solid #FFFFFF;
+    }
 
+}
 .is-standart {
     & .id,
     & .gen,

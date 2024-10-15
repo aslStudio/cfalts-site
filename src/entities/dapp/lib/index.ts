@@ -3,7 +3,7 @@ import { Rarity } from "../model";
 export function getRarityText(rarity?: Rarity) {
     switch (rarity) {
         case Rarity.STANDART:
-            return 'STANDART'
+            return 'STANDARD'
         case Rarity.SILVER:
             return 'SILVER'
         case Rarity.GOLD:

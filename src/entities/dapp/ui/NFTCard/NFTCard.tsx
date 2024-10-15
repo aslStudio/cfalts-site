@@ -67,17 +67,17 @@ export const NFTCard = React.memo<NFTCardProps>(({
                         type={'icon-etherscan'}
                     />
                 )}
-                {typeof id === 'number' && (
-                    <button 
-                        className={styles.button}
-                    >
-                        <img
-                            src={`${images.dapp['card-bg']}.png`}
-                            alt='bg'
-                        />
-                        <p>{isSelected ? 'SELECT NFT TO UNSTAKE' : 'SELECT NFT TO STAKE'}</p>
-                    </button>
-                )}
+                {/*{typeof id === 'number' && (*/}
+                {/*    <button */}
+                {/*        className={styles.button}*/}
+                {/*    >*/}
+                {/*        <img*/}
+                {/*            src={`${images.dapp['card-bg']}.png`}*/}
+                {/*            alt='bg'*/}
+                {/*        />*/}
+                {/*        <p>{isSelected ? 'SELECT NFT TO UNSTAKE' : 'SELECT NFT TO STAKE'}</p>*/}
+                {/*    </button>*/}
+                {/*)}*/}
             </div>
         </div>
     )
